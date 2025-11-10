@@ -1,0 +1,565 @@
+
+**** 03/11/25 14:01:02 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\users\sebas\onedrive - alum.uca.es\04 - proyectos\01 - [goal] tfg\01 - diseños\02 - módulo medid
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\cds_spb_home\cdssetup\OrCAD_PSpiceTIPSpice_Install\23.1.0\PSpice.ini file:
+.lib "nom_pspti.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.OPTIONS ADVCONV
+.OPTIONS FILEMODELSEARCH
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source 002_OFFSET_AI
+X_U1         N14587 N14594 VCC VEE N14962 0 N14488 N14492 INA849
+R_R1         N14492 N14488  60.6 TC=0,0 
+R_R2         0 N14594  50 TC=0,0 
+V_V1         N14587 0 0Vdc
+R_RShunt         N14594 N14587  0.01 TC=0,0 
+V_V2         VCC 0 5Vdc
+V_V3         0 VEE 5Vdc
+R_RL         0 N14962  10Meg TC=0,0 
+
+**** RESUMING bias.cir ****
+.END
+
+**** 03/11/25 14:01:02 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\users\sebas\onedrive - alum.uca.es\04 - proyectos\01 - [goal] tfg\01 - diseños\02 - módulo medid
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.X_U1.DVN   X_U1.X_U16.DVN  X_U1.X_U7.DVNF  X_U1.X_U8.DVNF  
+          IS  100.000000E-18  100.000000E-18  100.000000E-18  100.000000E-18 
+          KF    3.162278E-12    3.162278E-12    3.162278E-12    3.162278E-12 
+
+
+               X_U1.X_INA849_OUTAMP.X_U1.DVN 
+          IS  100.000000E-18 
+          KF    3.872984E-12 
+
+
+**** 03/11/25 14:01:02 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\users\sebas\onedrive - alum.uca.es\04 - proyectos\01 - [goal] tfg\01 - diseños\02 - módulo medid
+
+
+ ****     Resistor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U1.X_INA849_INAMP0.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U1.X_INA849_INAMP1.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U1.X_INA849_OUTAMP.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+**** 03/11/25 14:01:02 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\users\sebas\onedrive - alum.uca.es\04 - proyectos\01 - [goal] tfg\01 - diseños\02 - módulo medid
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.X_U12.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .1          
+
+
+               X_U1.X_U13.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .1          
+
+
+               X_U1.X_U14.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .1          
+
+
+               X_U1.X_U15.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .1          
+
+
+               X_U1.X_U3.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .1          
+
+
+               X_U1.X_U4.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .1          
+
+
+               X_U1.X_INA849_OUTAMP.X_U20.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .1          
+
+
+**** 03/11/25 14:01:02 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\users\sebas\onedrive - alum.uca.es\04 - proyectos\01 - [goal] tfg\01 - diseños\02 - módulo medid
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VCC)    5.0000  (  VEE)   -5.0000  (N14488)    -.0011 (N14492)    -.0011     
+
+(N14587)    0.0000 (N14594)-49.99E-15 (N14962)     .0010 (X_U1.INN)-99.99E-15   
+
+(X_U1.INP) 10.00E-06                  (X_U1.MID) 1.925E-09                      
+
+(X_U1.ESDN)-99.99E-15                 (X_U1.ESDP)-100.0E-15                     
+
+(X_U1.NODE1)    -.0016                (X_U1.NODE2)-579.0E-06                    
+
+(X_U1.VCC_B)    4.9999                (X_U1.VEE_B)   -4.9999                    
+
+(X_U1.X_U1.3)    0.0000               (X_U1.X_U1.4)    0.0000                   
+
+(X_U1.X_U1.5)    0.0000               (X_U1.X_U1.6)    0.0000                   
+
+(X_U1.X_U1.7)     .8338               (X_U1.X_U1.8)     .8338                   
+
+(X_U1.X_U7.3)    0.0000               (X_U1.X_U7.4)    0.0000                   
+
+(X_U1.X_U7.5)    0.0000               (X_U1.X_U7.6)    0.0000                   
+
+(X_U1.X_U7.7)     .8338               (X_U1.X_U7.8)     .8338                   
+
+(X_U1.X_U8.3)    0.0000               (X_U1.X_U8.4)    0.0000                   
+
+(X_U1.X_U8.5)    0.0000               (X_U1.X_U8.6)    0.0000                   
+
+(X_U1.X_U8.7)     .8338               (X_U1.X_U8.8)     .8338                   
+
+(X_U1.N969449)    3.9999              (X_U1.N969473)    3.9999                  
+
+(X_U1.N969492)    3.9999              (X_U1.X_U16.3)    0.0000                  
+
+(X_U1.X_U16.4)    0.0000              (X_U1.X_U16.5)    0.0000                  
+
+(X_U1.X_U16.6)    0.0000              (X_U1.X_U16.7)     .8338                  
+
+(X_U1.X_U16.8)     .8338              (X_U1.N1383384)-99.99E-15                 
+
+(X_U1.N1383401)-100.0E-15             (X_U1.N1384032) 10.00E-06                 
+
+(X_U1.N1384907) 10.00E-06             (X_U1.N1385067)    2.4999                 
+
+(X_U1.N1385271)   -2.4999             (X_U1.N1385582) 10.00E-06                 
+
+(X_U1.N1386246)    2.4999             (X_U1.N1386314)-99.99E-15                 
+
+(X_U1.N1386364)-99.99E-15             (X_U1.N1386438)   -2.4999                 
+
+(X_U1.N1602365) 1.925E-09             (X_U1.N1602505)    4.9999                 
+
+(X_U1.N1602545)   -4.9999             (X_U1.N1604535)-284.5E-06                 
+
+(X_U1.N1604573)-289.5E-06             (X_U1.X_INA849_OUTAMP.VCLP)     .0026     
+
+(X_U1.X_INA849_OUTAMP.CLAMP)     .0026                                          
+
+(X_U1.X_INA849_OUTAMP.PSRR+) 5.001E-06                                          
+
+(X_U1.X_INA849_OUTAMP.PSRR-)-5.000E-06                                          
+
+(X_U1.X_INA849_OUTAMP.VIMON) 259.0E-06                                          
+
+(X_U1.X_INA849_INAMP0.CLAMP1)    -.0018                                         
+
+(X_U1.X_INA849_INAMP0.VIMON1)-422.0E-06                                         
+
+(X_U1.X_INA849_INAMP1.CLAMP1)-643.6E-06                                         
+
+(X_U1.X_INA849_INAMP1.VIMON1) 109.0E-06                                         
+
+(X_U1.X_INA849_OUTAMP.VOUT_S)     .0010                                         
+
+(X_U1.X_INA849_OUTAMP.VSENSE)     .0026                                         
+
+(X_U1.X_INA849_OUTAMP.X_U1.3)    0.0000                                         
+
+(X_U1.X_INA849_OUTAMP.X_U1.4)    0.0000                                         
+
+(X_U1.X_INA849_OUTAMP.X_U1.5)    0.0000                                         
+
+(X_U1.X_INA849_OUTAMP.X_U1.6)    0.0000                                         
+
+(X_U1.X_INA849_OUTAMP.X_U1.7)     .8338                                         
+
+(X_U1.X_INA849_OUTAMP.X_U1.8)     .8338                                         
+
+(X_U1.X_INA849_INAMP0.N256245)    -.0198                                        
+
+(X_U1.X_INA849_INAMP0.N256255)    -.0057                                        
+
+(X_U1.X_INA849_INAMP0.N256265)    -.0198                                        
+
+(X_U1.X_INA849_INAMP0.N256273)    -.0194                                        
+
+(X_U1.X_INA849_INAMP0.N256555)    -.0198                                        
+
+(X_U1.X_INA849_INAMP0.N256573)    -.0198                                        
+
+(X_U1.X_INA849_INAMP0.N256623)    -.0198                                        
+
+(X_U1.X_INA849_INAMP0.N256643)    -.0198                                        
+
+(X_U1.X_INA849_INAMP0.N256659)    -.0198                                        
+
+(X_U1.X_INA849_INAMP0.N256703)    -.0198                                        
+
+(X_U1.X_INA849_INAMP0.N256819)    -.0016                                        
+
+(X_U1.X_INA849_INAMP0.N257223)    -.0198                                        
+
+(X_U1.X_INA849_INAMP0.N257277)    -.0198                                        
+
+(X_U1.X_INA849_INAMP0.N261786)-201.7E-09                                        
+
+(X_U1.X_INA849_INAMP0.N928127)    3.9999                                        
+
+(X_U1.X_INA849_INAMP0.N928131)    3.9999                                        
+
+(X_U1.X_INA849_INAMP0.N957915)    -.0198                                        
+
+(X_U1.X_INA849_INAMP0.N957967)    -.0198                                        
+
+(X_U1.X_INA849_INAMP0.N970369)-422.0E-06                                        
+
+(X_U1.X_INA849_INAMP0.VSENSE1)    -.0018                                        
+
+(X_U1.X_INA849_INAMP1.N256245)    -.0057                                        
+
+(X_U1.X_INA849_INAMP1.N256255)    -.0016                                        
+
+(X_U1.X_INA849_INAMP1.N256265)    -.0057                                        
+
+(X_U1.X_INA849_INAMP1.N256273)    -.0056                                        
+
+(X_U1.X_INA849_INAMP1.N256555)    -.0057                                        
+
+(X_U1.X_INA849_INAMP1.N256573)    -.0057                                        
+
+(X_U1.X_INA849_INAMP1.N256623)    -.0057                                        
+
+(X_U1.X_INA849_INAMP1.N256643)    -.0057                                        
+
+(X_U1.X_INA849_INAMP1.N256659)    -.0057                                        
+
+(X_U1.X_INA849_INAMP1.N256703)    -.0057                                        
+
+(X_U1.X_INA849_INAMP1.N256819)-579.0E-06                                        
+
+(X_U1.X_INA849_INAMP1.N257223)    -.0057                                        
+
+(X_U1.X_INA849_INAMP1.N257277)    -.0057                                        
+
+(X_U1.X_INA849_INAMP1.N261786)-70.81E-09                                        
+
+(X_U1.X_INA849_INAMP1.N928127)    3.9999                                        
+
+(X_U1.X_INA849_INAMP1.N928131)    3.9999                                        
+
+(X_U1.X_INA849_INAMP1.N957915)    -.0057                                        
+
+(X_U1.X_INA849_INAMP1.N957967)    -.0057                                        
+
+(X_U1.X_INA849_INAMP1.N970369) 109.0E-06                                        
+
+(X_U1.X_INA849_INAMP1.VSENSE1)-643.6E-06                                        
+
+(X_U1.X_INA849_OUTAMP.N261787) 2.348E-09                                        
+
+(X_U1.X_INA849_OUTAMP.N953165)-289.5E-06                                        
+
+(X_U1.X_INA849_OUTAMP.N953203)-284.5E-06                                        
+
+(X_U1.X_INA849_OUTAMP.N989282) 259.0E-06                                        
+
+(X_U1.X_INA849_OUTAMP.N995776)-284.5E-06                                        
+
+(X_U1.X_INA849_OUTAMP.VCC_CLP)    4.9058                                        
+
+(X_U1.X_INA849_OUTAMP.VEE_CLP)   -4.9508                                        
+
+(X_U1.X_INA849_OUTAMP.N1388079)    -.0527                                       
+
+(X_U1.X_INA849_OUTAMP.N1388089)-4.999E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1388099)-4.999E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1388109)-298.1E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1388119)-4.999E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1388129)-298.2E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1388139)-5.000E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1388149)-5.000E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1388167)-5.000E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1388177)-5.000E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1388615)-5.000E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1388629)-5.000E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1389051)    9.0899                                       
+
+(X_U1.X_INA849_OUTAMP.N1389061) 5.001E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1389071) 5.001E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1389081) 5.001E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1389297) 5.001E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1394706)-294.5E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1394772)-284.5E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1401129)    2.9999                                       
+
+(X_U1.X_INA849_OUTAMP.N1401213)-284.5E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1401349)   -2.9999                                       
+
+(X_U1.X_INA849_OUTAMP.N1403176)     .0010                                       
+
+(X_U1.X_INA849_OUTAMP.N1428789)     .0166                                       
+
+(X_U1.X_INA849_OUTAMP.N1428799)     .0026                                       
+
+(X_U1.X_INA849_OUTAMP.N1428809)     .0166                                       
+
+(X_U1.X_INA849_OUTAMP.N1428819)     .0026                                       
+
+(X_U1.X_INA849_OUTAMP.N1428991)     .0026                                       
+
+(X_U1.X_INA849_OUTAMP.N1661226)    4.9058                                       
+
+(X_U1.X_INA849_OUTAMP.N1661302)    4.9058                                       
+
+(X_U1.X_INA849_OUTAMP.N1661462) 1.925E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1661466) 1.925E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1661612)   -4.9508                                       
+
+(X_U1.X_INA849_OUTAMP.N1661626)   -4.9508                                       
+
+(X_U1.X_INA849_OUTAMP.N1661666) 1.925E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1661680) 1.925E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1663647)   34.0000                                       
+
+(X_U1.X_INA849_OUTAMP.N1663665)  220.0000                                       
+
+(X_U1.X_INA849_OUTAMP.N1663763) 1.925E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1663805) 1.925E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1663947) 1.925E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1663951) 1.925E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1664077) 1.925E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1664091) 1.925E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1664165) 1.925E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1664179) 1.925E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1664201)  -34.0000                                       
+
+(X_U1.X_INA849_OUTAMP.N1664265) -220.0000                                       
+
+(X_U1.X_INA849_OUTAMP.N1696516)     .0026                                       
+
+(X_U1.X_INA849_OUTAMP.N1939474)     .1409                                       
+
+(X_U1.X_INA849_OUTAMP.N1939484) 107.1E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1939494)     .1410                                       
+
+(X_U1.X_INA849_OUTAMP.N1939504)     .0012                                       
+
+(X_U1.X_INA849_OUTAMP.N1939514)     .1409                                       
+
+(X_U1.X_INA849_OUTAMP.N1939524)     .0863                                       
+
+(X_U1.X_INA849_OUTAMP.N1939534)     .1407                                       
+
+(X_U1.X_INA849_OUTAMP.N1939542)     .0070                                       
+
+(X_U1.X_INA849_OUTAMP.N1939552)     .1406                                       
+
+(X_U1.X_INA849_OUTAMP.N1939562)     .0070                                       
+
+(X_U1.X_INA849_OUTAMP.N1939572)     .1406                                       
+
+(X_U1.X_INA849_OUTAMP.N1939580)     .0070                                       
+
+(X_U1.X_INA849_OUTAMP.N1939722)     .1409                                       
+
+(X_U1.X_INA849_OUTAMP.N1939730)     .1409                                       
+
+(X_U1.X_INA849_OUTAMP.N1939746)     .1409                                       
+
+(X_U1.X_INA849_OUTAMP.N1939754)     .1409                                       
+
+(X_U1.X_INA849_OUTAMP.N1939792)     .1407                                       
+
+(X_U1.X_INA849_OUTAMP.N1939800)     .1407                                       
+
+(X_U1.X_INA849_OUTAMP.N1939816)     .1407                                       
+
+(X_U1.X_INA849_OUTAMP.N1939824)     .1407                                       
+
+(X_U1.X_INA849_OUTAMP.N1940296)     .1406                                       
+
+(X_U1.X_INA849_OUTAMP.N1940758)     .1409                                       
+
+(X_U1.X_INA849_OUTAMP.N1940790)     .1409                                       
+
+(X_U1.X_INA849_OUTAMP.N1940844)     .1407                                       
+
+(X_U1.X_INA849_OUTAMP.N1940876)     .1407                                       
+
+(X_U1.X_INA849_OUTAMP.N2052331)-289.5E-06                                       
+
+(X_U1.X_INA849_OUTAMP.OUT_NODE)     .0010                                       
+
+(X_U1.X_INA849_OUTAMP.CL_CLAMP_OP)     .0026                                    
+
+(X_U1.X_INA849_OUTAMP.CLAW_CLAMP_OP)     .0026           
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.500E-11
+    V_V2        -6.200E-03
+    V_V3        -6.200E-03
+    X_U1.V_VB   -1.171E-16
+    X_U1.V_VCM_MAX  -2.500E-12
+    X_U1.V_VCM_MAX1  -2.500E-12
+    X_U1.V_VCM_MIN   2.500E-12
+    X_U1.V_VCM_MIN1   2.500E-12
+    X_U1.X_INA849_OUTAMP.V_VCM_MAX2  -3.000E-12
+    X_U1.X_INA849_OUTAMP.V_VCM_MIN2   3.000E-12
+    X_U1.X_INA849_OUTAMP.V_V_GRN   2.200E-07
+    X_U1.X_INA849_OUTAMP.V_V_GRP  -2.200E-07
+    X_U1.X_INA849_OUTAMP.V_V_ISCN   3.400E-11
+    X_U1.X_INA849_OUTAMP.V_V_ISCP  -3.400E-11
+    X_U1.X_INA849_INAMP0.X_H_IMON11.VH_H_IMON11  -4.220E-07
+    X_U1.X_INA849_INAMP1.X_H_IMON11.VH_H_IMON11   1.090E-07
+    X_U1.X_INA849_OUTAMP.X_H_IMON.VH_H_IMON   2.590E-07
+
+    TOTAL POWER DISSIPATION   6.21E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 03/11/25 14:01:02 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\users\sebas\onedrive - alum.uca.es\04 - proyectos\01 - [goal] tfg\01 - diseños\02 - módulo medid
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =        5.02
+
