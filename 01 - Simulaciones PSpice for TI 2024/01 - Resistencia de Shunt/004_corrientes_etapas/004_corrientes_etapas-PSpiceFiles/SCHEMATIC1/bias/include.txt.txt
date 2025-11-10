@@ -1,0 +1,2 @@
++ .options PTRANABSTOL 1e-5
++ .options PTRANNVTOL 1e-4

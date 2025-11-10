@@ -1,0 +1,30 @@
+** Profile: "SCHEMATIC1-bias"  [ C:\Sebas\02-Facultad\PSpice\01 - Resistencia de Shunt\005_corrientes_sim\005_correines_sim-pspicefiles\schematic1\bias.sim ] 
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\cds_spb_home\cdssetup\OrCAD_PSpiceTIPSpice_Install\23.1.0\PSpice.ini file:
+.lib "C:\Users\sebas\OneDrive - alum.uca.es\B - Spice Models\Transistor\BSS138P.lib" 
+.lib "C:\Users\sebas\OneDrive - alum.uca.es\B - Spice Models\Transistor\DMG2302.lib" 
+.lib "C:\Users\sebas\OneDrive - alum.uca.es\B - Spice Models\Transistor\2N7000.onsemi.lib" 
+.lib "C:\Users\sebas\OneDrive - alum.uca.es\B - Spice Models\Transistor\2N7000.nxp.lib" 
+.lib "nom_pspti.lib" 
+.lib "nom.lib" 
+.inc "C:\Users\sebas\OneDrive - alum.uca.es\04 - Proyectos\01 - [GOAL] TFG\Documentación\include.txt" 
+
+*Analysis directives: 
+.TRAN  0 1s 0 100us SKIPBP 
+.OPTIONS ADVCONV
+.OPTIONS FILEMODELSEARCH
+.OPTIONS ABSTOL= 1.0n
+.OPTIONS RELTOL= 2m
+.OPTIONS VNTOL= 1m
+.AUTOCONVERGE ITL1=1000 ITL2=1000 ITL4=1000 RELTOL=0.05 ABSTOL=1.0E-6 VNTOL=.001 PIVTOL=1.0E-10 
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+.END

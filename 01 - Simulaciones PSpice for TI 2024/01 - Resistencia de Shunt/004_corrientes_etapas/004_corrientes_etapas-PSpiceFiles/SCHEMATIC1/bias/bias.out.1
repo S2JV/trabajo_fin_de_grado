@@ -1,0 +1,1345 @@
+
+**** 03/12/25 10:45:02 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\users\sebas\onedrive - alum.uca.es\04 - proyectos\01 - [goal] tfg\01 - diseños\02 - módulo medid
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\cds_spb_home\cdssetup\OrCAD_PSpiceTIPSpice_Install\23.1.0\PSpice.ini file:
+.lib "nom_pspti.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN PARAM V -100u 100u 10u 
+.OPTIONS ADVCONV
+.OPTIONS FILEMODELSEARCH
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source 004_CORRIENTES_ETAPAS
+X_U1         0 N16912 10VCC 10VEE N17949 N16922 N16828 N16916 INA849
+R_RShunt         N16912 0  0.01 TC=0,0 
+R_R1         N16916 N16828  60.6 TC=0,0 
+V_V4         N16922 0 -1.01m
+V_V3         0 10VEE 10Vdc
+R_R2         0 N16912  50 TC=0,0 
+V_V2         10VCC 0 10Vdc
+X_U2         N17949 N17776 5VCC 5VEE N17504 OPAx210
+R_RL         0 N17504  10Meg TC=0,0 
+R_R3         N17504 N17776  1k TC=0,0 
+R_R4         N17776 N17916  1.5k TC=0,0 
+V_V5         N17916 0 {V}
+V_V7         0 5VEE 5Vdc
+V_V6         5VCC 0 5Vdc
+.PARAM  v=0
+
+**** RESUMING bias.cir ****
+.END
+
+**** 03/12/25 10:45:02 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\users\sebas\onedrive - alum.uca.es\04 - proyectos\01 - [goal] tfg\01 - diseños\02 - módulo medid
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.X_U1.DVN   X_U1.X_U16.DVN  X_U1.X_U7.DVNF  X_U1.X_U8.DVNF  
+          IS  100.000000E-18  100.000000E-18  100.000000E-18  100.000000E-18 
+          KF    3.162278E-12    3.162278E-12    3.162278E-12    3.162278E-12 
+
+
+               X_U2.X_U39.DVNF X_U2.X_U40.DVNF X_U2.X_U43.DVN  
+          IS  100.000000E-18  100.000000E-18  100.000000E-18 
+          KF    3.162278E-12    3.162278E-12    3.162278E-12 
+
+
+               X_U1.X_INA849_OUTAMP.X_U1.DVN 
+          IS  100.000000E-18 
+          KF    3.872984E-12 
+
+
+**** 03/12/25 10:45:02 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\users\sebas\onedrive - alum.uca.es\04 - proyectos\01 - [goal] tfg\01 - diseños\02 - módulo medid
+
+
+ ****     Resistor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U2.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U1.X_INA849_INAMP0.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U1.X_INA849_INAMP1.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U1.X_INA849_OUTAMP.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+**** 03/12/25 10:45:02 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\users\sebas\onedrive - alum.uca.es\04 - proyectos\01 - [goal] tfg\01 - diseños\02 - módulo medid
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.X_U12.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .1          
+
+
+               X_U1.X_U13.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .1          
+
+
+               X_U1.X_U14.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .1          
+
+
+               X_U1.X_U15.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .1          
+
+
+               X_U1.X_U3.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .1          
+
+
+               X_U1.X_U4.ESD_SW                X_U2.X_S1._S1   X_U2.X_S2._S2   
+         RON   50                                .01             .01         
+        ROFF    1.000000E+12                    1.000000E+12    1.000000E+12 
+         VON     .5                              .01             .01         
+        VOFF     .1                             0               0            
+
+
+               X_U2.X_U20.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .7          
+        VOFF     .65         
+
+
+               X_U2.X_U21.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .45         
+
+
+               X_U2.X_U25.OL_SW 
+         RON    1.000000E-03 
+        ROFF    1.000000E+09 
+         VON     .9          
+        VOFF     .8          
+
+
+               X_U2.X_U5.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .45         
+
+
+               X_U1.X_INA849_OUTAMP.X_U20.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .1          
+
+
+Model-Specific Temperatures During Sweep  Param value = -0.0001
+
+ **** RESISTORS
+
+               X_U1.R_RCM1 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.R_RCM2 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.R_RCM3 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+00  
+
+
+               X_U1.R_RCM4 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.R_RCM5 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.R_RCM6 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+12      1.000E-03  
+
+
+               X_U1.R_RCM7 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.R_RCM8 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.R_RIN11 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+12      1.000E-02  
+
+
+               X_U1.R_RIN12 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.R_RIN13 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.R_RIN14 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-02      1.000E-02      1.000E-02  
+
+
+               X_U1.R_RIN_CMN <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.R_RIN_CMP <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.R_R_MID1 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+00  
+
+
+               X_U1.R_R_MID2 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.R_R_MID3 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.R_R_MID4 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E-03      1.000E-03  
+
+
+               X_U1.R_R_MID5 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.R_R_MID6 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.R_R_MID7 <X_U1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+06      1.000E+12  
+
+
+               X_U2.R_R15 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R16 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R167 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+02  
+
+
+               X_U2.R_R17 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R178 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R179 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      3.000E+04      1.000E+04  
+
+
+               X_U2.R_R18 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R19 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R20 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+00  
+
+
+               X_U2.R_R21 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R22 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R23 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+06      1.000E+06  
+
+
+               X_U2.R_R24 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R266 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R267 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E+06      1.000E+06  
+
+
+               X_U2.R_R273 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R274 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R275 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+08      6.000E+00      1.000E+00  
+
+
+               X_U2.R_R291 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R297 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R300 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+08      2.100E+01  
+
+
+               X_U2.R_R301 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R306 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R307 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+03      1.000E+00  
+
+
+               X_U2.R_R308 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R309 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R314 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.010E+02      1.750E+05  
+
+
+               X_U2.R_R315 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R316 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R317 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      1.000E+00  
+
+
+               X_U2.R_R318 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R319 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R320 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.780E+00  
+
+
+               X_U2.R_R321 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R322 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R323 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+04  
+
+
+               X_U2.R_R324 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R325 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R326 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        2.310E+01      1.000E+00      1.000E+03  
+
+
+               X_U2.R_R34 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R35 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R36 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.900E+00  
+
+
+               X_U2.R_R37 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R38 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R39 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+04      2.532E+04  
+
+
+               X_U2.R_R43 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R46 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R47 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E-03  
+
+
+               X_U2.R_R48 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R49 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R5 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+12      1.000E+00  
+
+
+               X_U2.R_R50 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R51 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R52 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E-03      1.000E+00  
+
+
+               X_U2.R_R53 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R54 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R55 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U2.R_R56 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R57 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R58 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U2.R_R59 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R6 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R60 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+04      1.000E+00  
+
+
+               X_U2.R_R61 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R62 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R63 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U2.R_R64 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R65 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R66 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+12      1.000E+00  
+
+
+               X_U2.R_R67 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R68 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R69 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U2.R_R7 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R70 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R71 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.400E+00      1.000E+00      1.000E-03  
+
+
+               X_U2.R_R72 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R73 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R74 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E-03      1.000E+03  
+
+
+               X_U2.R_R75 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R76 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R77 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+03  
+
+
+               X_U2.R_R78 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R79 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R8 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+03  
+
+
+               X_U2.R_R80 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R81 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R82 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+02      1.000E+00  
+
+
+               X_U2.R_R83 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_RDUMMY <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_RS_INN <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      2.350E+04      1.000E-02  
+
+
+               X_U2.R_RS_INP <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_RX <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_RX1 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-02      2.350E+05      1.000E+12  
+
+
+               X_U2.R_RX2 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_RX3 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_RX4 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+12      1.000E+02  
+
+
+               X_U2.R_R_CM1 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U2.R_R_CM2 <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U2.R_R_DIFF <X_U2.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+08  
+
+
+               X_U1.X_INA849_INAMP0.R_R136 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_INAMP0.R_R143 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_INAMP0.R_R144 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      9.800E+03      1.000E+04  
+
+
+               X_U1.X_INA849_INAMP0.R_R34 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_INAMP0.R_R35 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_INAMP0.R_R36 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      3.992E+03  
+
+
+               X_U1.X_INA849_INAMP0.R_R38 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_INAMP0.R_R39 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_INAMP0.R_R41 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        2.241E+02      1.000E+04      1.000E+00  
+
+
+               X_U1.X_INA849_INAMP0.R_R46 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_INAMP0.R_R67 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_INAMP0.R_R68 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+04      1.000E+00  
+
+
+               X_U1.X_INA849_INAMP0.R_R69 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_INAMP0.R_R70 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_INAMP0.R_R71 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        4.450E+05      9.800E+03      1.000E+04  
+
+
+               X_U1.X_INA849_INAMP0.R_R72 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_INAMP0.R_R75 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_INAMP0.R_R78 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+06  
+
+
+               X_U1.X_INA849_INAMP0.R_R79 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_INAMP0.R_RDUMMY1 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_INAMP0.R_RIN1 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      5.750E+02      1.000E-02  
+
+
+               X_U1.X_INA849_INAMP0.R_RIN2 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_INAMP0.R_RX1 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_INAMP0.R_R_VIMON11 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-02      5.750E+03      1.000E+02  
+
+
+               X_U1.X_INA849_INAMP0.R_R_VIMON12 <X_U1.X_INA849_INAMP0.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_INAMP1.R_R136 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_INAMP1.R_R143 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+03      9.800E+03  
+
+
+               X_U1.X_INA849_INAMP1.R_R144 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_INAMP1.R_R34 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_INAMP1.R_R35 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+04      1.000E+00  
+
+
+               X_U1.X_INA849_INAMP1.R_R36 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_INAMP1.R_R38 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_INAMP1.R_R39 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        3.992E+03      2.241E+02      1.000E+04  
+
+
+               X_U1.X_INA849_INAMP1.R_R41 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_INAMP1.R_R46 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_INAMP1.R_R67 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+04  
+
+
+               X_U1.X_INA849_INAMP1.R_R68 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_INAMP1.R_R69 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_INAMP1.R_R70 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      4.450E+05      9.800E+03  
+
+
+               X_U1.X_INA849_INAMP1.R_R71 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_INAMP1.R_R72 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_INAMP1.R_R75 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      1.000E+00  
+
+
+               X_U1.X_INA849_INAMP1.R_R78 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_INAMP1.R_R79 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_INAMP1.R_RDUMMY1 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+06      5.750E+02  
+
+
+               X_U1.X_INA849_INAMP1.R_RIN1 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_INAMP1.R_RIN2 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_INAMP1.R_RX1 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-02      1.000E-02      5.750E+03  
+
+
+               X_U1.X_INA849_INAMP1.R_R_VIMON11 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_INAMP1.R_R_VIMON12 <X_U1.X_INA849_INAMP1.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_R120 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+12      1.000E+03  
+
+
+               X_U1.X_INA849_OUTAMP.R_R121 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_R122 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_R123 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E+00      1.000E+00  
+
+
+               X_U1.X_INA849_OUTAMP.R_R124 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_R125 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_R126 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E+03      1.000E+12  
+
+
+               X_U1.X_INA849_OUTAMP.R_R127 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_R128 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_R129 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E+00  
+
+
+               X_U1.X_INA849_OUTAMP.R_R130 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_R131 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_R142 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+00  
+
+
+               X_U1.X_INA849_OUTAMP.R_R143 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_R145 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_R146 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+09      1.000E+03      1.000E+03  
+
+
+               X_U1.X_INA849_OUTAMP.R_R147 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_R148 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_R149 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E+04      1.000E+04  
+
+
+               X_U1.X_INA849_OUTAMP.R_R152 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_R153 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_R156 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+06  
+
+
+               X_U1.X_INA849_OUTAMP.R_R157 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_R158 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_R161 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.858E+03      1.858E+03      1.000E+03  
+
+
+               X_U1.X_INA849_OUTAMP.R_R162 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_R163 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_R164 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+09      1.000E+00  
+
+
+               X_U1.X_INA849_OUTAMP.R_R165 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_R166 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_R167 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+00  
+
+
+               X_U1.X_INA849_OUTAMP.R_R168 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_R169 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_R170 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+00  
+
+
+               X_U1.X_INA849_OUTAMP.R_R171 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_R172 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_R173 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      2.556E+04      2.556E+04  
+
+
+               X_U1.X_INA849_OUTAMP.R_R174 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_R175 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_R176 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        4.900E+04      4.900E+04      1.000E+04  
+
+
+               X_U1.X_INA849_OUTAMP.R_R177 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_R178 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_R179 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+04      1.000E+04  
+
+
+               X_U1.X_INA849_OUTAMP.R_R180 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_R181 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_R182 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+04      1.000E+04  
+
+
+               X_U1.X_INA849_OUTAMP.R_R183 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_R184 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_R185 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+04      1.000E+00  
+
+
+               X_U1.X_INA849_OUTAMP.R_R186 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_R187 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_R188 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+00  
+
+
+               X_U1.X_INA849_OUTAMP.R_R189 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_R190 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_R191 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+00  
+
+
+               X_U1.X_INA849_OUTAMP.R_R192 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_R193 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_R194 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      7.606E+00      1.581E+04  
+
+
+               X_U1.X_INA849_OUTAMP.R_R195 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_R196 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_R197 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        5.263E+02      5.263E+02      5.263E+02  
+
+
+               X_U1.X_INA849_OUTAMP.R_R198 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_R199 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_R37 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+00  
+
+
+               X_U1.X_INA849_OUTAMP.R_R44 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_R45 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_R84 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      8.807E+01      1.000E+02  
+
+
+               X_U1.X_INA849_OUTAMP.R_RCM5 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_RCM6 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_RCM7 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E-03      1.000E+00  
+
+
+               X_U1.X_INA849_OUTAMP.R_RCM8 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_RDUMMY <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_RIN2_CMN <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      5.000E+04      1.000E+12  
+
+
+               X_U1.X_INA849_OUTAMP.R_RIN2_CMP <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_RIN3 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_RIN4 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E-02      1.000E-02  
+
+
+               X_U1.X_INA849_OUTAMP.R_RO1 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_RO2 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_RP1 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+06      1.000E+08  
+
+
+               X_U1.X_INA849_OUTAMP.R_RP10 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_RP11 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_RP12 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        6.383E+02      9.000E+04      1.000E+04  
+
+
+               X_U1.X_INA849_OUTAMP.R_RP13 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_RP14 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_RP2 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        9.000E+04      1.000E+04      5.500E+01  
+
+
+               X_U1.X_INA849_OUTAMP.R_RP3 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_RP4 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_RP5 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        2.900E+05      1.000E+04      1.000E+08  
+
+
+               X_U1.X_INA849_OUTAMP.R_RP6 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_RP7 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_RP8 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        9.500E+03      1.000E+04      6.383E+02  
+
+
+               X_U1.X_INA849_OUTAMP.R_RP9 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_RSRC <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_RSRC1 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      1.000E+00  
+
+
+               X_U1.X_INA849_OUTAMP.R_RSRC2 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_RSRC3 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_RSRC4 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+00  
+
+
+               X_U1.X_INA849_OUTAMP.R_RSRC5 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_RSRC6 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_RSRC7 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+00  
+
+
+               X_U1.X_INA849_OUTAMP.R_RSRC8 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_RX <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_R_VIMON21 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      5.000E+05      1.000E+12  
+
+
+               X_U1.X_INA849_OUTAMP.R_R_VIMON22 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U1.X_INA849_OUTAMP.R_VOUTS1 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U1.X_INA849_OUTAMP.R_VOUTS2 <X_U1.X_INA849_OUTAMP.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+12      1.000E+02  
+
+
+
+Starting pseudo-transient algorithm.
+
+INFO(ORPSIM-16594): To improve Pseudotransient Convergence and Performance, set following options to relax stabilization criteria for capacitor currents and inductor voltages: PTRANABSTOL=1e-5, PTRANVNTOL=1e-4
+
+ERROR -- Convergence problem in DC sweep
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+( 5VCC)    5.0000  ( 5VEE)   -5.0000  (10VCC)   10.0000  (10VEE)  -10.0000      
+
+(N16828)    -.0011 (N16912)-49.99E-15 (N16916)    -.0011 (N16922)    -.0010     
+
+(N17504) 107.1E-06 (N17776) 24.11E-06 (N17916)-100.0E-06 (N17949) 20.11E-06     
+
+(X_U1.INN)-99.99E-15                  (X_U1.INP) 10.00E-06                      
+
+(X_U1.MID) 1.930E-09                  (X_U2.MID)-28.61E-18                      
+
+(X_U2.V11)-3.257E-09                  (X_U2.V12)-3.257E-09                      
+
+(X_U1.ESDN)-99.99E-15                 (X_U1.ESDP)-100.0E-15                     
+
+(X_U2.ESDN) 24.11E-06                 (X_U2.ESDP) 20.11E-06                     
+
+(X_U2.VCLP) 340.4E-06                 (X_U1.NODE1)    -.0016                    
+
+(X_U1.NODE2)-579.0E-06                (X_U1.VCC_B)    9.9999                    
+
+(X_U1.VEE_B)   -9.9999                (X_U2.CLAMP) 339.6E-06                    
+
+(X_U2.VCC_B)    5.0000                (X_U2.VEE_B)   -5.0000                    
+
+(X_U2.VIMON) 82.95E-06                (X_U1.X_U1.3)    0.0000                   
+
+(X_U1.X_U1.4)    0.0000               (X_U1.X_U1.5)    0.0000                   
+
+(X_U1.X_U1.6)    0.0000               (X_U1.X_U1.7)     .8338                   
+
+(X_U1.X_U1.8)     .8338               (X_U1.X_U7.3)    0.0000                   
+
+(X_U1.X_U7.4)    0.0000               (X_U1.X_U7.5)    0.0000                   
+
+(X_U1.X_U7.6)    0.0000               (X_U1.X_U7.7)     .8338                   
+
+(X_U1.X_U7.8)     .8338               (X_U1.X_U8.3)    0.0000                   
+
+(X_U1.X_U8.4)    0.0000               (X_U1.X_U8.5)    0.0000                   
+
+(X_U1.X_U8.6)    0.0000               (X_U1.X_U8.7)     .8338                   
+
+(X_U1.X_U8.8)     .8338               (X_U2.VOUT_S) 107.1E-06                   
+
+(X_U2.VSENSE) 339.6E-06               (X_U1.N969449)    8.9999                  
+
+(X_U1.N969473)    8.9999              (X_U1.N969492)    8.9999                  
+
+(X_U1.X_U16.3)    0.0000              (X_U1.X_U16.4)    0.0000                  
+
+(X_U1.X_U16.5)    0.0000              (X_U1.X_U16.6)    0.0000                  
+
+(X_U1.X_U16.7)     .8338              (X_U1.X_U16.8)     .8338                  
+
+(X_U2.VCC_CLP)    4.9670              (X_U2.VEE_CLP)   -4.9670                  
+
+(X_U2.X_U39.3)    0.0000              (X_U2.X_U39.4)    0.0000                  
+
+(X_U2.X_U39.5)    0.0000              (X_U2.X_U39.6)    0.0000                  
+
+(X_U2.X_U39.7)     .8338              (X_U2.X_U39.8)     .8338                  
+
+(X_U2.X_U40.3)    0.0000              (X_U2.X_U40.4)    0.0000                  
+
+(X_U2.X_U40.5)    0.0000              (X_U2.X_U40.6)    0.0000                  
+
+(X_U2.X_U40.7)     .8338              (X_U2.X_U40.8)     .8338                  
+
+(X_U2.X_U43.3)    0.0000              (X_U2.X_U43.4)    0.0000                  
+
+(X_U2.X_U43.5)    0.0000              (X_U2.X_U43.6)    0.0000                  
+
+(X_U2.X_U43.7)     .8338              (X_U2.X_U43.8)     .8338                  
+
+(X_U1.N1383384)-99.99E-15             (X_U1.N1383401)-100.0E-15                 
+
+(X_U1.N1384032) 10.00E-06             (X_U1.N1384907) 10.00E-06                 
+
+(X_U1.N1385067)    7.4999             (X_U1.N1385271)   -7.4999                 
+
+(X_U1.N1385582) 10.00E-06             (X_U1.N1386246)    7.4999                 
+
+(X_U1.N1386314)-99.99E-15             (X_U1.N1386364)-99.99E-15                 
+
+(X_U1.N1386438)   -7.4999             (X_U1.N1602365) 1.930E-09                 
+
+(X_U1.N1602505)    9.9999             (X_U1.N1602545)   -9.9999                 
+
+(X_U1.N1604535)-779.5E-06             (X_U1.N1604573)-794.5E-06                 
+
+(X_U2.CL_CLAMP) 340.4E-06             (X_U2.N5296587) 250.5E-09                 
+
+(X_U2.N5296597)    4.1750             (X_U2.N5296613) 14.36E-09                 
+
+(X_U2.N5296623) 2.011E-12             (X_U2.N5296637)   -1.1950                 
+
+(X_U2.N5296643)-251.0E-09             (X_U2.N5297649) 23.61E-06                 
+
+(X_U2.N5297653) 23.61E-06             (X_U2.N5297689) 23.61E-06                 
+
+(X_U2.N5297697) 24.11E-06             (X_U2.N5297811) 107.1E-06                 
+
+(X_U2.N5297995) 340.4E-06             (X_U2.N5298043) 82.95E-06                 
+
+(X_U2.N5298247)     .0207             (X_U2.N5298259) 18.36E-06                 
+
+(X_U2.N5298335)    3.5000             (X_U2.N5298539)     .0207                 
+
+(X_U2.N5298547) 206.7E-06             (X_U2.N5298565) 107.1E-06                 
+
+(X_U2.N5298577) 20.11E-06             (X_U2.N5298735) 7.753E-09                 
+
+(X_U2.N5298821) 339.6E-06             (X_U2.N5298855) 339.6E-06                 
+
+(X_U2.N5298889) 339.6E-06             (X_U2.N5298911) 340.4E-06                 
+
+(X_U2.N5298977)     .0207             (X_U2.N5298999)     .0149                 
+
+(X_U2.N5299017)     .0207             (X_U2.N5299035)     .0207                 
+
+(X_U2.N5299057)     .0207             (X_U2.N5299111)     .0207                 
+
+(X_U2.N5299325) 24.11E-06             (X_U2.N5299343) 24.11E-06                 
+
+(X_U2.N5300195)     .0207             (X_U2.N5300247) 24.11E-06                 
+
+(X_U2.N5300373)     .0207             (X_U2.N5300937)   -3.5000                 
+
+(X_U2.N5301533)   55.5000             (X_U2.N5301537) 339.6E-06                 
+
+(X_U2.N5301543)  205.0000             (X_U2.N5301563)-28.61E-18                 
+
+(X_U2.N5301567)-28.61E-18             (X_U2.N5301577)-28.61E-18                 
+
+(X_U2.N5301581)-28.61E-18             (X_U2.N5301591)-28.61E-18                 
+
+(X_U2.N5301595)-28.61E-18             (X_U2.N5302227)-28.61E-18                 
+
+(X_U2.N5302261)-28.61E-18             (X_U2.N5302295)-28.61E-18                 
+
+(X_U2.N5302333)-28.61E-18             (X_U2.N5302369)-28.61E-18                 
+
+(X_U2.N5302405)-28.61E-18             (X_U2.N5302475)-28.61E-18                 
+
+(X_U2.N5302495)  -55.5000             (X_U2.N5302499) -205.0000                 
+
+(X_U2.N5302951)    5.0000             (X_U2.N5302991)   -5.0000                 
+
+(X_U2.N5303741)    4.9670             (X_U2.N5303747)   -3.2497                 
+
+(X_U2.N5303803)    3.2503             (X_U2.N5303823)    4.9670                 
+
+(X_U2.N5304181)-3.257E-09             (X_U2.N5304195)-28.61E-18                 
+
+(X_U2.N5304303)   -3.2497             (X_U2.N5304315)   -3.2497                 
+
+(X_U2.N5304383)    3.2503             (X_U2.N5304405)    3.2503                 
+
+(X_U2.N5304435)-3.257E-09             (X_U2.N5304593)   -4.9670                 
+
+(X_U2.N5304615)   -4.9670             (X_U2.N5331892) 2.010E-12                 
+
+(X_U2.N5331902) 1.735E-15             (X_U2.N5336063) 2.011E-12                 
+
+(X_U2.N5354255) 339.6E-06             (X_U2.N5356232) 782.6E-09                 
+
+(X_U2.N52998091)     .0207            (X_U2.CLAW_CLAMP) 340.4E-06               
+
+(X_U2.SW_OL_OPAx210)-28.61E-18        (X_U1.X_INA849_OUTAMP.VCLP) 334.2E-06     
+
+(X_U1.X_INA849_OUTAMP.CLAMP) 334.4E-06                                          
+
+(X_U1.X_INA849_OUTAMP.PSRR+) 10.00E-06                                          
+
+(X_U1.X_INA849_OUTAMP.PSRR-)-10.00E-06                                          
+
+(X_U1.X_INA849_OUTAMP.VIMON) 160.2E-06                                          
+
+(X_U1.X_INA849_INAMP0.CLAMP1)    -.0018                                         
+
+(X_U1.X_INA849_INAMP0.VIMON1)-323.0E-06                                         
+
+(X_U1.X_INA849_INAMP1.CLAMP1)-637.0E-06                                         
+
+(X_U1.X_INA849_INAMP1.VIMON1) 210.0E-06                                         
+
+(X_U1.X_INA849_OUTAMP.VOUT_S) 20.11E-06                                         
+
+(X_U1.X_INA849_OUTAMP.VSENSE) 334.4E-06                                         
+
+(X_U1.X_INA849_OUTAMP.X_U1.3)    0.0000                                         
+
+(X_U1.X_INA849_OUTAMP.X_U1.4)    0.0000                                         
+
+(X_U1.X_INA849_OUTAMP.X_U1.5)    0.0000                                         
+
+(X_U1.X_INA849_OUTAMP.X_U1.6)    0.0000                                         
+
+(X_U1.X_INA849_OUTAMP.X_U1.7)     .8338                                         
+
+(X_U1.X_INA849_OUTAMP.X_U1.8)     .8338                                         
+
+(X_U1.X_INA849_INAMP0.N256245)    -.0192                                        
+
+(X_U1.X_INA849_INAMP0.N256255)    -.0055                                        
+
+(X_U1.X_INA849_INAMP0.N256265)    -.0192                                        
+
+(X_U1.X_INA849_INAMP0.N256273)    -.0188                                        
+
+(X_U1.X_INA849_INAMP0.N256555)    -.0192                                        
+
+(X_U1.X_INA849_INAMP0.N256573)    -.0192                                        
+
+(X_U1.X_INA849_INAMP0.N256623)    -.0192                                        
+
+(X_U1.X_INA849_INAMP0.N256643)    -.0192                                        
+
+(X_U1.X_INA849_INAMP0.N256659)    -.0192                                        
+
+(X_U1.X_INA849_INAMP0.N256703)    -.0192                                        
+
+(X_U1.X_INA849_INAMP0.N256819)    -.0016                                        
+
+(X_U1.X_INA849_INAMP0.N257223)    -.0192                                        
+
+(X_U1.X_INA849_INAMP0.N257277)    -.0192                                        
+
+(X_U1.X_INA849_INAMP0.N261786)-201.0E-09                                        
+
+(X_U1.X_INA849_INAMP0.N928127)    8.9999                                        
+
+(X_U1.X_INA849_INAMP0.N928131)    8.9999                                        
+
+(X_U1.X_INA849_INAMP0.N957915)    -.0192                                        
+
+(X_U1.X_INA849_INAMP0.N957967)    -.0192                                        
+
+(X_U1.X_INA849_INAMP0.N970369)-323.0E-06                                        
+
+(X_U1.X_INA849_INAMP0.VSENSE1)    -.0018                                        
+
+(X_U1.X_INA849_INAMP1.N256245)    -.0052                                        
+
+(X_U1.X_INA849_INAMP1.N256255)    -.0015                                        
+
+(X_U1.X_INA849_INAMP1.N256265)    -.0052                                        
+
+(X_U1.X_INA849_INAMP1.N256273)    -.0051                                        
+
+(X_U1.X_INA849_INAMP1.N256555)    -.0052                                        
+
+(X_U1.X_INA849_INAMP1.N256573)    -.0052                                        
+
+(X_U1.X_INA849_INAMP1.N256623)    -.0052                                        
+
+(X_U1.X_INA849_INAMP1.N256643)    -.0052                                        
+
+(X_U1.X_INA849_INAMP1.N256659)    -.0052                                        
+
+(X_U1.X_INA849_INAMP1.N256703)    -.0052                                        
+
+(X_U1.X_INA849_INAMP1.N256819)-579.0E-06                                        
+
+(X_U1.X_INA849_INAMP1.N257223)    -.0052                                        
+
+(X_U1.X_INA849_INAMP1.N257277)    -.0052                                        
+
+(X_U1.X_INA849_INAMP1.N261786)-70.07E-09                                        
+
+(X_U1.X_INA849_INAMP1.N928127)    8.9999                                        
+
+(X_U1.X_INA849_INAMP1.N928131)    8.9999                                        
+
+(X_U1.X_INA849_INAMP1.N957915)    -.0052                                        
+
+(X_U1.X_INA849_INAMP1.N957967)    -.0052                                        
+
+(X_U1.X_INA849_INAMP1.N970369) 210.0E-06                                        
+
+(X_U1.X_INA849_INAMP1.VSENSE1)-637.0E-06                                        
+
+(X_U1.X_INA849_OUTAMP.N261787) 2.005E-09                                        
+
+(X_U1.X_INA849_OUTAMP.N953165)-794.5E-06                                        
+
+(X_U1.X_INA849_OUTAMP.N953203)-779.5E-06                                        
+
+(X_U1.X_INA849_OUTAMP.N989282) 160.2E-06                                        
+
+(X_U1.X_INA849_OUTAMP.N995776)-779.5E-06                                        
+
+(X_U1.X_INA849_OUTAMP.VCC_CLP)    9.9058                                        
+
+(X_U1.X_INA849_OUTAMP.VEE_CLP)   -9.9508                                        
+
+(X_U1.X_INA849_OUTAMP.N1388079)    -.1053                                       
+
+(X_U1.X_INA849_OUTAMP.N1388089)-10.00E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1388099)-10.00E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1388109)-598.2E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1388119)-10.00E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1388129)-598.2E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1388139)-10.00E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1388149)-10.00E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1388167)-10.00E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1388177)-10.00E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1388615)-10.00E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1388629)-10.00E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1389051)   18.1800                                       
+
+(X_U1.X_INA849_OUTAMP.N1389061) 10.00E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1389071) 10.00E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1389081) 10.00E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1389297) 10.00E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1394706)-799.5E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1394772)-779.5E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1401129)    7.9999                                       
+
+(X_U1.X_INA849_OUTAMP.N1401213)-779.5E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1401349)   -7.9999                                       
+
+(X_U1.X_INA849_OUTAMP.N1403176) 20.11E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1428789)     .0021                                       
+
+(X_U1.X_INA849_OUTAMP.N1428799) 334.3E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1428809)     .0021                                       
+
+(X_U1.X_INA849_OUTAMP.N1428819) 334.2E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1428991) 334.4E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1661226)    9.9058                                       
+
+(X_U1.X_INA849_OUTAMP.N1661302)    9.9058                                       
+
+(X_U1.X_INA849_OUTAMP.N1661462) 1.930E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1661466) 1.930E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1661612)   -9.9508                                       
+
+(X_U1.X_INA849_OUTAMP.N1661626)   -9.9508                                       
+
+(X_U1.X_INA849_OUTAMP.N1661666) 1.930E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1661680) 1.930E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1663647)   34.0000                                       
+
+(X_U1.X_INA849_OUTAMP.N1663665)  220.0000                                       
+
+(X_U1.X_INA849_OUTAMP.N1663763) 1.930E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1663805) 1.930E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1663947) 1.930E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1663951) 1.930E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1664077) 1.930E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1664091) 1.930E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1664165) 1.930E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1664179) 1.930E-09                                       
+
+(X_U1.X_INA849_OUTAMP.N1664201)  -34.0000                                       
+
+(X_U1.X_INA849_OUTAMP.N1664265) -220.0000                                       
+
+(X_U1.X_INA849_OUTAMP.N1696516) 334.2E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1939474)     .0279                                       
+
+(X_U1.X_INA849_OUTAMP.N1939484) 61.19E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1939494)     .0805                                       
+
+(X_U1.X_INA849_OUTAMP.N1939504) 703.0E-06                                       
+
+(X_U1.X_INA849_OUTAMP.N1939514)     .0805                                       
+
+(X_U1.X_INA849_OUTAMP.N1939524)     .0493                                       
+
+(X_U1.X_INA849_OUTAMP.N1939534)     .0804                                       
+
+(X_U1.X_INA849_OUTAMP.N1939542)     .0040                                       
+
+(X_U1.X_INA849_OUTAMP.N1939552)     .0803                                       
+
+(X_U1.X_INA849_OUTAMP.N1939562)     .0040                                       
+
+(X_U1.X_INA849_OUTAMP.N1939572)     .0803                                       
+
+(X_U1.X_INA849_OUTAMP.N1939580)     .0040                                       
+
+(X_U1.X_INA849_OUTAMP.N1939722)     .0805                                       
+
+(X_U1.X_INA849_OUTAMP.N1939730)     .0805                                       
+
+(X_U1.X_INA849_OUTAMP.N1939746)     .0805                                       
+
+(X_U1.X_INA849_OUTAMP.N1939754)     .0805                                       
+
+(X_U1.X_INA849_OUTAMP.N1939792)     .0804                                       
+
+(X_U1.X_INA849_OUTAMP.N1939800)     .0804                                       
+
+(X_U1.X_INA849_OUTAMP.N1939816)     .0804                                       
+
+(X_U1.X_INA849_OUTAMP.N1939824)     .0804                                       
+
+(X_U1.X_INA849_OUTAMP.N1940296)     .0803                                       
+
+(X_U1.X_INA849_OUTAMP.N1940758)     .0805                                       
+
+(X_U1.X_INA849_OUTAMP.N1940790)     .0805                                       
+
+(X_U1.X_INA849_OUTAMP.N1940844)     .0804                                       
+
+(X_U1.X_INA849_OUTAMP.N1940876)     .0804                                       
+
+(X_U1.X_INA849_OUTAMP.N2052331)-794.5E-06                                       
+
+(X_U1.X_INA849_OUTAMP.OUT_NODE) 20.11E-06                                       
+
+(X_U1.X_INA849_OUTAMP.CL_CLAMP_OP) 334.2E-06                                    
+
+(X_U1.X_INA849_OUTAMP.CLAW_CLAMP_OP) 334.2E-06           
+
+
+  These voltages failed to converge:
+
+    V(X_U1.X_INA849_OUTAMP.VCLP) =   924.84uV  \   334.19uV
+    V(X_U1.X_INA849_OUTAMP.N1939474) =    80.51mV  \    27.95mV
+    V(X_U1.X_INA849_OUTAMP.N1428789) =    5.904mV  \    2.133mV
+    V(X_U1.X_INA849_OUTAMP.N1428799) =   925.08uV  \   334.28uV
+    V(X_U1.X_INA849_OUTAMP.N1428809) =    5.903mV  \    2.133mV
+    V(X_U1.X_INA849_OUTAMP.N1428819) =   924.84uV  \   334.19uV
+    V(X_U1.X_INA849_OUTAMP.CLAMP) =   925.33uV  \   334.37uV
+    V(X_U1.X_INA849_OUTAMP.N1428991) =   925.33uV  \   334.37uV
+    V(X_U1.X_INA849_OUTAMP.N1696516) =   924.84uV  \   334.19uV
+    V(X_U1.X_INA849_OUTAMP.CL_CLAMP_OP) =   924.84uV  \   334.19uV
+    V(X_U1.X_INA849_OUTAMP.CLAW_CLAMP_OP) =   924.84uV  \   334.19uV
+    V(X_U1.X_INA849_OUTAMP.VSENSE) =   925.33uV  \   334.37uV
+
+**** Interrupt ****

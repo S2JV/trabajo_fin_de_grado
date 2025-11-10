@@ -1,0 +1,84 @@
+
+**** 07/24/25 20:17:56 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ C:\Sebas\02-Facultad\PSpice\01 - Resistencia de Shunt\004_corrientes_etapas\004_corrientes_etapas-p
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\cds_spb_home\cdssetup\OrCAD_PSpiceTIPSpice_Install\23.1.0\PSpice.ini file:
+.lib "C:\Users\sebas\OneDrive - alum.uca.es\B - Spice Models\Transistor\BSS138P.lib" 
+.lib "C:\Users\sebas\OneDrive - alum.uca.es\B - Spice Models\Transistor\DMG2302.lib" 
+.lib "C:\Users\sebas\OneDrive - alum.uca.es\B - Spice Models\Transistor\2N7000.onsemi.lib" 
+.lib "C:\Users\sebas\OneDrive - alum.uca.es\B - Spice Models\Transistor\2N7000.nxp.lib" 
+.lib "nom_pspti.lib" 
+.lib "nom.lib" 
+.inc "C:\Users\sebas\OneDrive - alum.uca.es\04 - Proyectos\01 - [GOAL] TFG\Documentación\include.txt" 
+
+*Analysis directives: 
+
+**** INCLUDING include.txt ****
++ .options PTRANABSTOL=10u PTRANVNTOL=100u 
+
+**** RESUMING bias.cir ****
+.DC LIN PARAM V -100u 100u 10u 
+.OPTIONS ADVCONV
+.OPTIONS FILEMODELSEARCH
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source 004_CORRIENTES_ETAPAS
+X_U1         0 N16912 10VCC 10VEE N17949 N16922 N16828 N16916 INA849
+R_RShunt         N16912 0  0.01 TC=0,0 
+R_R1         N16916 N16828  60.6 TC=0,0 
+V_V4         N16922 0 -1.01m
+V_V3         0 10VEE 10Vdc
+R_R2         0 N16912  50 TC=0,0 
+V_V2         10VCC 0 10Vdc
+X_U2         N17949 N17776 5VCC 5VEE N17504 OPAx210
+R_RL         0 N17504  10Meg TC=0,0 
+R_R3         N17504 N17776  1k TC=0,0 
+R_R4         N17776 N17916  1.5k TC=0,0 
+V_V5         N17916 0 {V}
+V_V7         0 5VEE 5Vdc
+V_V6         5VCC 0 5Vdc
+.PARAM  v=0
+
+**** RESUMING bias.cir ****
+.END
+
+WARNING(ORPSIM-15223): Library file C:\cds_spb_home\cdssetup\pspTILibDir\nom_pspti.lib has changed since index file nom_pspti.ind was created.
+
+WARNING(ORPSIM-15227): The timestamp changed from Sun Apr 27 19:20:58 2025 to Thu Jul 24 09:06:03 2025.
+
+INFO(ORPSIM-15422): Making new index file nom_pspti.ind for library file nom_pspti.lib.
+
+Index has 37449 entries from 2462 file(s).
+1933952b4dcad44c74c7e4af17ab9ceb47fb216a8cd1cf21f96adde79914597495e36bf5ef38dbaa3db162f67b6c9d1b9e04f4cb83054a4997122da37159cce8
+8767f397bff4c3a731bbfa71d5efb6fe102372497787b35cd2903a846ded942f48ee22bd585a07f9e62ba69d834557f5bc8af0dcc46cf2b2dd124c2fe3307800
+c80587249d2ad0a3706b807646b8037175ce44f979749fd31e8797ff170e482c9a978d789718ddaafb3b7f3d2d38a96982a91090a357cfd5efec4ddceddf22e2
+0da261d90b6f90a7706b807646b80371a22c04df69010bcf316169696e6f953130c0d5316d4f0b4639d3f6ba1bf2dca94e929b15858e2e418ec6171c05f3adfb
+12794dd57fdc483a82a91090a357cfd5a9e8eaf9f0bb64cc5c19851b595069f772a7f35a9b5d102bacbc75bd8b81a2a8909b2a69dbb35c3856655e74361237a7
+fd80f3b49cb1eb4ba286ab8191b330075911b2e9db277617a5257eba54077ab5021166ac3753b7b831bbfa71d5efb6feb67b18df17f97aa1956711648fdaafb1
+2cfd781695004e38607a076fb2eb2e7082a91090a357cfd5a9e8eaf9f0bb64cc5c19851b595069f772a7f35a9b5d102bacbc75bd8b81a2a8f1aea1168b377581
+$CDNENCFINISH
+.ENDS TPS259824ONRGE_TRANS
+*$
+
+ERROR(ORPSIM-15107): Unable to make index for library file C:\cds_spb_home\cdssetup\pspTILibDir\nom_pspti.lib.
+

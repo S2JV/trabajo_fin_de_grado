@@ -1,0 +1,10 @@
+* source 03_OFFSET_AI_COMP
+X_U1         N15886 N16102 VCC VEE N16086 N16112 N16020 N16106 INA849
+R_R1         N16106 N16020  60.6 TC=0,0 
+R_R2         0 N16102  50 TC=0,0 
+V_V3         0 VEE 5Vdc
+R_RShunt         N16102 N15886  0.01 TC=0,0 
+V_V1         N15886 0 5
+R_RL         0 N16086  10Meg TC=0,0 
+V_V2         VCC 0 5Vdc
+V_V4         N16112 0 -1.01m
