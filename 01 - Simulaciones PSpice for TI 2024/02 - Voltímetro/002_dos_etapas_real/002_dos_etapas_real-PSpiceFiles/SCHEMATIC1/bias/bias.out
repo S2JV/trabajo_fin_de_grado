@@ -1,0 +1,478 @@
+
+**** 03/19/25 12:02:49 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ C:\Sebas\02-Facultad\PSpice\02 - Voltímetro\002_dos_etapas_real\002_dos_etapas_real-pspicefiles\sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\cds_spb_home\cdssetup\OrCAD_PSpiceTIPSpice_Install\23.1.0\PSpice.ini file:
+.lib "nom_pspti.lib" 
+.lib "nom.lib" 
+.inc "C:\Users\sebas\OneDrive - alum.uca.es\04 - Proyectos\01 - [GOAL] TFG\Documentación\include.txt" 
+
+*Analysis directives: 
+
+**** INCLUDING include.txt ****
++ .options PTRANABSTOL=10u PTRANVNTOL=100u
+
+
+**** RESUMING bias.cir ****
+.TRAN  0 100m 0 0.1m 
+.OPTIONS ADVCONV
+.OPTIONS FILEMODELSEARCH
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source 002_DOS_ETAPAS_REAL
+V_V2         N17025 0  AC 0.1
++SIN 2.5 0.1 50 0 0 0
+R_R5         N17025 N17035  1k TC=0,0 
+R_R3         0 N16919  1k TC=0,0 
+R_R2         N16991 N16955  24k TC=0,0 
+R_R6         N17125 N17035  1k TC=0,0 
+R_R4         N16919 N16933  1k TC=0,0 
+R_R1         0 N16991  1k TC=0,0 
+V_V1         0 N17125 2.4
+R_R7         0 N17035  100k TC=0,0 
+X_U3         N17035 N16919 VCC VEE N16933 OPAx210
+X_U4         N16933 N16991 VCC VEE N16955 OPAx210
+V_V3         VCC 0 10Vdc
+V_V4         0 VEE 10Vdc
+
+**** RESUMING bias.cir ****
+.END
+
+**** 03/19/25 12:02:49 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ C:\Sebas\02-Facultad\PSpice\02 - Voltímetro\002_dos_etapas_real\002_dos_etapas_real-pspicefiles\sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U3.X_U39.DVNF X_U3.X_U40.DVNF X_U3.X_U43.DVN  X_U4.X_U39.DVNF 
+          IS  100.000000E-18  100.000000E-18  100.000000E-18  100.000000E-18 
+          KF    3.162278E-12    3.162278E-12    3.162278E-12    3.162278E-12 
+
+
+               X_U4.X_U40.DVNF X_U4.X_U43.DVN  
+          IS  100.000000E-18  100.000000E-18 
+          KF    3.162278E-12    3.162278E-12 
+
+
+**** 03/19/25 12:02:49 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ C:\Sebas\02-Facultad\PSpice\02 - Voltímetro\002_dos_etapas_real\002_dos_etapas_real-pspicefiles\sch
+
+
+ ****     Resistor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U3.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+               X_U4.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+**** 03/19/25 12:02:49 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ C:\Sebas\02-Facultad\PSpice\02 - Voltímetro\002_dos_etapas_real\002_dos_etapas_real-pspicefiles\sch
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U3.X_S1._S1   X_U3.X_S2._S2   
+         RON     .01             .01         
+        ROFF    1.000000E+12    1.000000E+12 
+         VON     .01             .01         
+        VOFF    0               0            
+
+
+               X_U3.X_U20.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .7          
+        VOFF     .65         
+
+
+               X_U3.X_U21.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .45         
+
+
+               X_U3.X_U25.OL_SW 
+         RON    1.000000E-03 
+        ROFF    1.000000E+09 
+         VON     .9          
+        VOFF     .8          
+
+
+               X_U3.X_U5.ESD_SW                X_U4.X_S1._S1   X_U4.X_S2._S2   
+         RON   50                                .01             .01         
+        ROFF    1.000000E+12                    1.000000E+12    1.000000E+12 
+         VON     .5                              .01             .01         
+        VOFF     .45                            0               0            
+
+
+               X_U4.X_U20.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .7          
+        VOFF     .65         
+
+
+               X_U4.X_U21.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .45         
+
+
+               X_U4.X_U25.OL_SW 
+         RON    1.000000E-03 
+        ROFF    1.000000E+09 
+         VON     .9          
+        VOFF     .8          
+
+
+               X_U4.X_U5.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .45         
+
+
+**** 03/19/25 12:02:49 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ C:\Sebas\02-Facultad\PSpice\02 - Voltímetro\002_dos_etapas_real\002_dos_etapas_real-pspicefiles\sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VCC)   10.0000  (  VEE)  -10.0000  (N16919)     .0498 (N16933)     .0995     
+
+(N16955)    2.4879 (N16991)     .0995 (N17025)    2.5000 (N17035)     .0498     
+
+(N17125)   -2.4000 (X_U3.MID)-226.6E-21                  (X_U3.V11)-3.256E-09   
+
+(X_U3.V12)-3.257E-09                  (X_U4.MID)-453.2E-21                      
+
+(X_U4.V11)-3.249E-09                  (X_U4.V12)-3.264E-09                      
+
+(X_U3.ESDN)     .0498                 (X_U3.ESDP)     .0498                     
+
+(X_U3.VCLP)     .2439                 (X_U4.ESDN)     .0995                     
+
+(X_U4.ESDP)     .0995                 (X_U4.VCLP)    3.0608                     
+
+(X_U3.CLAMP)     .2433                (X_U3.VCC_B)   10.0000                    
+
+(X_U3.VEE_B)  -10.0000                (X_U3.VIMON)     .0498                    
+
+(X_U4.CLAMP)    3.0534                (X_U4.VCC_B)   10.0000                    
+
+(X_U4.VEE_B)  -10.0000                (X_U4.VIMON)     .0995                    
+
+(X_U3.VOUT_S)     .0995               (X_U3.VSENSE)     .2433                   
+
+(X_U4.VOUT_S)    2.4879               (X_U4.VSENSE)    3.0534                   
+
+(X_U3.VCC_CLP)    9.9660              (X_U3.VEE_CLP)   -9.9670                  
+
+(X_U3.X_U39.3)    0.0000              (X_U3.X_U39.4)    0.0000                  
+
+(X_U3.X_U39.5)    0.0000              (X_U3.X_U39.6)    0.0000                  
+
+(X_U3.X_U39.7)     .8338              (X_U3.X_U39.8)     .8338                  
+
+(X_U3.X_U40.3)    0.0000              (X_U3.X_U40.4)    0.0000                  
+
+(X_U3.X_U40.5)    0.0000              (X_U3.X_U40.6)    0.0000                  
+
+(X_U3.X_U40.7)     .8338              (X_U3.X_U40.8)     .8338                  
+
+(X_U3.X_U43.3)    0.0000              (X_U3.X_U43.4)    0.0000                  
+
+(X_U3.X_U43.5)    0.0000              (X_U3.X_U43.6)    0.0000                  
+
+(X_U3.X_U43.7)     .8338              (X_U3.X_U43.8)     .8338                  
+
+(X_U4.VCC_CLP)    9.9650              (X_U4.VEE_CLP)   -9.9670                  
+
+(X_U4.X_U39.3)    0.0000              (X_U4.X_U39.4)    0.0000                  
+
+(X_U4.X_U39.5)    0.0000              (X_U4.X_U39.6)    0.0000                  
+
+(X_U4.X_U39.7)     .8338              (X_U4.X_U39.8)     .8338                  
+
+(X_U4.X_U40.3)    0.0000              (X_U4.X_U40.4)    0.0000                  
+
+(X_U4.X_U40.5)    0.0000              (X_U4.X_U40.6)    0.0000                  
+
+(X_U4.X_U40.7)     .8338              (X_U4.X_U40.8)     .8338                  
+
+(X_U4.X_U43.3)    0.0000              (X_U4.X_U43.4)    0.0000                  
+
+(X_U4.X_U43.5)    0.0000              (X_U4.X_U43.6)    0.0000                  
+
+(X_U4.X_U43.7)     .8338              (X_U4.X_U43.8)     .8338                  
+
+(X_U3.CL_CLAMP)     .2439             (X_U3.N5296587) 501.0E-09                 
+
+(X_U3.N5296597)    8.3500             (X_U3.N5296613) 35.53E-06                 
+
+(X_U3.N5296623) 4.974E-09             (X_U3.N5296637)   -2.3900                 
+
+(X_U3.N5296643)-501.9E-09             (X_U3.N5297649)     .0498                 
+
+(X_U3.N5297653)     .0498             (X_U3.N5297689)     .0498                 
+
+(X_U3.N5297697)     .0498             (X_U3.N5297811)     .0995                 
+
+(X_U3.N5297995)     .2439             (X_U3.N5298043)     .0498                 
+
+(X_U3.N5298247)   12.7740             (X_U3.N5298259)     .0114                 
+
+(X_U3.N5298335)    8.5000             (X_U3.N5298539)   12.7890                 
+
+(X_U3.N5298547)     .1279             (X_U3.N5298565)     .0995                 
+
+(X_U3.N5298577)     .0498             (X_U3.N5298735) 5.554E-06                 
+
+(X_U3.N5298821)     .2433             (X_U3.N5298855)     .2433                 
+
+(X_U3.N5298889)     .2433             (X_U3.N5298911)     .2439                 
+
+(X_U3.N5298977)   12.8350             (X_U3.N5298999)    9.2014                 
+
+(X_U3.N5299017)   12.7900             (X_U3.N5299035)   12.7900                 
+
+(X_U3.N5299057)   12.7900             (X_U3.N5299111)   12.7870                 
+
+(X_U3.N5299325)     .0498             (X_U3.N5299343)     .0498                 
+
+(X_U3.N5300195)   12.7900             (X_U3.N5300247)     .0498                 
+
+(X_U3.N5300373)   12.7900             (X_U3.N5300937)   -8.5000                 
+
+(X_U3.N5301533)   55.5000             (X_U3.N5301537)     .2433                 
+
+(X_U3.N5301543)  205.0000             (X_U3.N5301563)-226.6E-21                 
+
+(X_U3.N5301567)-226.6E-21             (X_U3.N5301577)-226.6E-21                 
+
+(X_U3.N5301581)-226.6E-21             (X_U3.N5301591)-226.6E-21                 
+
+(X_U3.N5301595)-226.6E-21             (X_U3.N5302227)-226.6E-21                 
+
+(X_U3.N5302261)-226.6E-21             (X_U3.N5302295)-226.6E-21                 
+
+(X_U3.N5302333)-226.6E-21             (X_U3.N5302369)-226.6E-21                 
+
+(X_U3.N5302405)-226.6E-21             (X_U3.N5302475)-226.6E-21                 
+
+(X_U3.N5302495)  -55.5000             (X_U3.N5302499) -205.0000                 
+
+(X_U3.N5302951)   10.0000             (X_U3.N5302991)  -10.0000                 
+
+(X_U3.N5303741)    9.9660             (X_U3.N5303747)   -3.0061                 
+
+(X_U3.N5303803)    3.4939             (X_U3.N5303823)    9.9660                 
+
+(X_U3.N5304181)-3.256E-09             (X_U3.N5304195)-226.6E-21                 
+
+(X_U3.N5304303)   -3.0061             (X_U3.N5304315)   -3.0061                 
+
+(X_U3.N5304383)    3.4939             (X_U3.N5304405)    3.4939                 
+
+(X_U3.N5304435)-3.257E-09             (X_U3.N5304593)   -9.9670                 
+
+(X_U3.N5304615)   -9.9670             (X_U3.N5331892) 4.974E-09                 
+
+(X_U3.N5331902) 4.363E-12             (X_U3.N5336063) 4.974E-09                 
+
+(X_U3.N5354255)     .2433             (X_U3.N5356232) 560.6E-06                 
+
+(X_U4.CL_CLAMP)    3.0608             (X_U4.N5296587) 501.0E-09                 
+
+(X_U4.N5296597)    8.3500             (X_U4.N5296613) 71.07E-06                 
+
+(X_U4.N5296623) 9.949E-09             (X_U4.N5296637)   -2.3900                 
+
+(X_U4.N5296643)-501.9E-09             (X_U4.N5297649)     .0995                 
+
+(X_U4.N5297653)     .0995             (X_U4.N5297689)     .0995                 
+
+(X_U4.N5297697)     .0995             (X_U4.N5297811)    2.4879                 
+
+(X_U4.N5297995)    3.0608             (X_U4.N5298043)     .0995                 
+
+(X_U4.N5298247)   50.7010             (X_U4.N5298259)     .0451                 
+
+(X_U4.N5298335)    8.5000             (X_U4.N5298539)   50.7580                 
+
+(X_U4.N5298547)     .5075             (X_U4.N5298565)    2.4879                 
+
+(X_U4.N5298577)     .0995             (X_U4.N5298735) 69.71E-06                 
+
+(X_U4.N5298821)    3.0534             (X_U4.N5298855)    3.0534                 
+
+(X_U4.N5298889)    3.0534             (X_U4.N5298911)    3.0608                 
+
+(X_U4.N5298977)   50.9440             (X_U4.N5298999)   36.5200                 
+
+(X_U4.N5299017)   50.7630             (X_U4.N5299035)   50.7630                 
+
+(X_U4.N5299057)   50.7630             (X_U4.N5299111)   50.7530                 
+
+(X_U4.N5299325)     .0995             (X_U4.N5299343)     .0995                 
+
+(X_U4.N5300195)   50.7630             (X_U4.N5300247)     .0995                 
+
+(X_U4.N5300373)   50.7630             (X_U4.N5300937)   -8.5000                 
+
+(X_U4.N5301533)   55.5000             (X_U4.N5301537)    3.0534                 
+
+(X_U4.N5301543)  205.0000             (X_U4.N5301563)-453.2E-21                 
+
+(X_U4.N5301567)-453.2E-21             (X_U4.N5301577)-453.2E-21                 
+
+(X_U4.N5301581)-453.2E-21             (X_U4.N5301591)-453.2E-21                 
+
+(X_U4.N5301595)-453.2E-21             (X_U4.N5302227)-453.2E-21                 
+
+(X_U4.N5302261)-453.2E-21             (X_U4.N5302295)-453.2E-21                 
+
+(X_U4.N5302333)-453.2E-21             (X_U4.N5302369)-453.2E-21                 
+
+(X_U4.N5302405)-453.2E-21             (X_U4.N5302475)-453.2E-21                 
+
+(X_U4.N5302495)  -55.5000             (X_U4.N5302499) -205.0000                 
+
+(X_U4.N5302951)   10.0000             (X_U4.N5302991)  -10.0000                 
+
+(X_U4.N5303741)    9.9650             (X_U4.N5303747)    -.1892                 
+
+(X_U4.N5303803)    6.3108             (X_U4.N5303823)    9.9650                 
+
+(X_U4.N5304181)-3.249E-09             (X_U4.N5304195)-453.2E-21                 
+
+(X_U4.N5304303)    -.1892             (X_U4.N5304315)    -.1892                 
+
+(X_U4.N5304383)    6.3108             (X_U4.N5304405)    6.3108                 
+
+(X_U4.N5304435)-3.264E-09             (X_U4.N5304593)   -9.9670                 
+
+(X_U4.N5304615)   -9.9670             (X_U4.N5331892) 9.948E-09                 
+
+(X_U4.N5331902) 8.727E-12             (X_U4.N5336063) 9.948E-09                 
+
+(X_U4.N5354255)    3.0531             (X_U4.N5356232)     .0070                 
+
+(X_U3.N52998091)   12.7900            (X_U4.N52998091)   50.7630                
+
+(X_U3.CLAW_CLAMP)     .2439           (X_U4.CLAW_CLAMP)    3.0608               
+
+(X_U3.SW_OL_OPAx210)-226.6E-21        (X_U4.SW_OL_OPAx210)-453.2E-21        
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -2.450E-03
+    V_V1        -2.450E-03
+    V_V3        -4.549E-03
+    V_V4        -4.400E-03
+    X_U3.V_VCM_MAX  -8.502E-12
+    X_U3.V_VCM_MIN   8.502E-12
+    X_U3.V_V_GRN   2.050E-10
+    X_U3.V_V_GRP  -2.050E-10
+    X_U3.V_V_ISCN   5.550E-11
+    X_U3.V_V_ISCP  -5.550E-11
+    X_U3.V_V_ORN   0.000E+00
+    X_U3.V_V_ORP   0.000E+00
+    X_U4.V_VCM_MAX  -8.502E-12
+    X_U4.V_VCM_MIN   8.502E-12
+    X_U4.V_V_GRN   2.050E-10
+    X_U4.V_V_GRP  -2.050E-10
+    X_U4.V_V_ISCN   5.550E-11
+    X_U4.V_V_ISCP  -5.550E-11
+    X_U4.V_V_ORN   0.000E+00
+    X_U4.V_V_ORP   0.000E+00
+    X_U3.X_H1.VH_H1   4.976E-05
+    X_U3.X_H2.VH_H2  -3.257E-09
+    X_U3.X_H3.VH_H3   3.256E-09
+    X_U4.X_H1.VH_H1   9.952E-05
+    X_U4.X_H2.VH_H2  -3.264E-09
+    X_U4.X_H3.VH_H3   3.249E-09
+
+    TOTAL POWER DISSIPATION   1.02E-01  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 03/19/25 12:02:49 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ C:\Sebas\02-Facultad\PSpice\02 - Voltímetro\002_dos_etapas_real\002_dos_etapas_real-pspicefiles\sch
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =        4.06
+

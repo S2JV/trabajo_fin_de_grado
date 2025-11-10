@@ -1,0 +1,106 @@
+
+**** 03/19/25 12:00:03 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ C:\Sebas\02-Facultad\PSpice\02 - Voltímetro\001_dos_etapas_ideal\001_dos_etapas_ideal-pspicefiles\s
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\cds_spb_home\cdssetup\OrCAD_PSpiceTIPSpice_Install\23.1.0\PSpice.ini file:
+.lib "nom_pspti.lib" 
+.lib "nom.lib" 
+.inc "C:\Users\sebas\OneDrive - alum.uca.es\04 - Proyectos\01 - [GOAL] TFG\Documentación\include.txt" 
+
+*Analysis directives: 
+
+**** INCLUDING include.txt ****
++ .options PTRANABSTOL=10u PTRANVNTOL=100u
+
+
+**** RESUMING bias.cir ****
+.TRAN  0 100m 0 0.1m 
+.OPTIONS ADVCONV
+.OPTIONS FILEMODELSEARCH
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source 001_DOS_ETAPAS_IDEAL
+E_U2         N14526 0 VALUE {LIMIT(V(N14615,N14509)*1E6,-5V,5V)}
+R_R3         0 N14509  1k TC=0,0 
+R_R4         N14509 N14526  1k TC=0,0 
+R_R5         N14928 N14615  1k TC=0,0 
+R_R6         N14762 N14615  1k TC=0,0 
+R_R7         0 N14615  100k TC=0,0 
+V_V2         N14928 0  AC 0.1
++SIN 2.5 0.1 50 0 0 0
+V_V1         0 N14762 2.4
+R_R2         N16187 N16177  24k TC=0,0 
+E_U1         N16177 0 VALUE {LIMIT(V(N14526,N16187)*1E6,-5V,5V)}
+R_R1         0 N16187  1k TC=0,0 
+
+**** RESUMING bias.cir ****
+.END
+
+**** 03/19/25 12:00:03 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ C:\Sebas\02-Facultad\PSpice\02 - Voltímetro\001_dos_etapas_ideal\001_dos_etapas_ideal-pspicefiles\s
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N14509)     .0498 (N14526)     .0995 (N14615)     .0498 (N14762)   -2.4000     
+
+(N14928)    2.5000 (N16177)    2.4875 (N16187)     .0995 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -2.450E-03
+    V_V1        -2.450E-03
+
+    TOTAL POWER DISSIPATION   1.20E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 03/19/25 12:00:03 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ C:\Sebas\02-Facultad\PSpice\02 - Voltímetro\001_dos_etapas_ideal\001_dos_etapas_ideal-pspicefiles\s
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =        2.11
+

@@ -1,0 +1,19 @@
+* source 004_ETAPA_UNO_COMPENSACION_OFFSET
+R_R6         N19747 N19651  1k TC=0,0 
+R_R4         N19513 N19527  1k TC=0,0 
+V_V1         0 N19747 0
+X_U3         N19651 N19513 VCC VEE N19527 OPAx210
+R_R5         N19641 N19651  1k TC=0,0 
+R_R7         0 N19651  100k TC=0,0 
+R_R3         0 N19513  1k TC=0,0 
+V_V4         0 VEE 10Vdc
+V_V3         VCC 0 10Vdc
+V_V2         N19641 0  AC 0
++SIN 0 0 50 0 0 0
+V_V6         0 5VEE 5Vdc
+V_V5         5VCC 0 5Vdc
+R_R8         N20472 N19651  900 TC=0,0 
+R_R9         N20810 N20472  200k TC=0,0 
+R_R10         0 N20472  100 TC=0,0 
+X_R11         5VEE N20810 5VCC POT PARAMS: SET={POT_SET} VALUE=50k
+.PARAM  pot_set=0

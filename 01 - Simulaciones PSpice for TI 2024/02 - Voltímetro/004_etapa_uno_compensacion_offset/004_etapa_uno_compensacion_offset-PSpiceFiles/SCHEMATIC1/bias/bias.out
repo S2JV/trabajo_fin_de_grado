@@ -1,0 +1,2998 @@
+
+**** 03/19/25 12:47:26 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\sebas\02-facultad\pspice\02 - voltímetro\004_etapa_uno_compensacion_offset\004_etapa_uno_compens
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\cds_spb_home\cdssetup\OrCAD_PSpiceTIPSpice_Install\23.1.0\PSpice.ini file:
+.lib "nom_pspti.lib" 
+.lib "nom.lib" 
+.inc "C:\Users\sebas\OneDrive - alum.uca.es\04 - Proyectos\01 - [GOAL] TFG\Documentación\include.txt" 
+
+*Analysis directives: 
+
+**** INCLUDING include.txt ****
++ .options PTRANABSTOL=10u PTRANVNTOL=100u
+
+
+**** RESUMING bias.cir ****
+.DC LIN PARAM POT_SET 0.45 0.55 0.01 
+.OPTIONS ADVCONV
+.OPTIONS FILEMODELSEARCH
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source 004_ETAPA_UNO_COMPENSACION_OFFSET
+R_R6         N19747 N19651  1k TC=0,0 
+R_R4         N19513 N19527  1k TC=0,0 
+V_V1         0 N19747 0
+X_U3         N19651 N19513 VCC VEE N19527 OPAx210
+R_R5         N19641 N19651  1k TC=0,0 
+R_R7         0 N19651  100k TC=0,0 
+R_R3         0 N19513  1k TC=0,0 
+V_V4         0 VEE 10Vdc
+V_V3         VCC 0 10Vdc
+V_V2         N19641 0  AC 0
++SIN 0 0 50 0 0 0
+V_V6         0 5VEE 5Vdc
+V_V5         5VCC 0 5Vdc
+R_R8         N20472 N19651  900 TC=0,0 
+R_R9         N20810 N20472  200k TC=0,0 
+R_R10         0 N20472  100 TC=0,0 
+X_R11         5VEE N20810 5VCC POT PARAMS: SET={POT_SET} VALUE=50k
+.PARAM  pot_set=0
+
+**** RESUMING bias.cir ****
+.END
+
+**** 03/19/25 12:47:26 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\sebas\02-facultad\pspice\02 - voltímetro\004_etapa_uno_compensacion_offset\004_etapa_uno_compens
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U3.X_U39.DVNF X_U3.X_U40.DVNF X_U3.X_U43.DVN  
+          IS  100.000000E-18  100.000000E-18  100.000000E-18 
+          KF    3.162278E-12    3.162278E-12    3.162278E-12 
+
+
+**** 03/19/25 12:47:26 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\sebas\02-facultad\pspice\02 - voltímetro\004_etapa_uno_compensacion_offset\004_etapa_uno_compens
+
+
+ ****     Resistor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U3.R_NOISELESS 
+  T_Measured   27            
+   T_Current -273.15         
+           R    1            
+
+
+**** 03/19/25 12:47:26 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\sebas\02-facultad\pspice\02 - voltímetro\004_etapa_uno_compensacion_offset\004_etapa_uno_compens
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U3.X_S1._S1   X_U3.X_S2._S2   
+         RON     .01             .01         
+        ROFF    1.000000E+12    1.000000E+12 
+         VON     .01             .01         
+        VOFF    0               0            
+
+
+               X_U3.X_U20.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .7          
+        VOFF     .65         
+
+
+               X_U3.X_U21.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .45         
+
+
+               X_U3.X_U25.OL_SW 
+         RON    1.000000E-03 
+        ROFF    1.000000E+09 
+         VON     .9          
+        VOFF     .8          
+
+
+               X_U3.X_U5.ESD_SW 
+         RON   50            
+        ROFF    1.000000E+12 
+         VON     .5          
+        VOFF     .45         
+
+
+Model-Specific Temperatures During Sweep  Param value = 0.45
+
+ **** RESISTORS
+
+               X_U3.R_R15 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R16 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R167 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+02  
+
+
+               X_U3.R_R17 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R178 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R179 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      3.000E+04      1.000E+04  
+
+
+               X_U3.R_R18 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R19 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R20 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R21 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R22 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R23 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+06      1.000E+06  
+
+
+               X_U3.R_R24 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R266 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R267 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E+06      1.000E+06  
+
+
+               X_U3.R_R273 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R274 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R275 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+08      6.000E+00      1.000E+00  
+
+
+               X_U3.R_R291 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R297 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R300 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+08      2.100E+01  
+
+
+               X_U3.R_R301 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R306 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R307 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+03      1.000E+00  
+
+
+               X_U3.R_R308 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R309 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R314 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.010E+02      1.750E+05  
+
+
+               X_U3.R_R315 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R316 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R317 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      1.000E+00  
+
+
+               X_U3.R_R318 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R319 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R320 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.780E+00  
+
+
+               X_U3.R_R321 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R322 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R323 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+04  
+
+
+               X_U3.R_R324 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R325 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R326 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        2.310E+01      1.000E+00      1.000E+03  
+
+
+               X_U3.R_R34 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R35 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R36 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.900E+00  
+
+
+               X_U3.R_R37 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R38 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R39 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+04      2.532E+04  
+
+
+               X_U3.R_R43 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R46 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R47 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R48 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R49 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R5 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R50 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R51 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R52 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E-03      1.000E+00  
+
+
+               X_U3.R_R53 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R54 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R55 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R56 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R57 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R58 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R59 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R6 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R60 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+04      1.000E+00  
+
+
+               X_U3.R_R61 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R62 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R63 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U3.R_R64 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R65 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R66 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R67 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R68 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R69 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U3.R_R7 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R70 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R71 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.400E+00      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R72 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R73 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R74 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E-03      1.000E+03  
+
+
+               X_U3.R_R75 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R76 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R77 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+03  
+
+
+               X_U3.R_R78 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R79 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R8 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+03  
+
+
+               X_U3.R_R80 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R81 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R82 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+02      1.000E+00  
+
+
+               X_U3.R_R83 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RDUMMY <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RS_INN <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      2.350E+04      1.000E-02  
+
+
+               X_U3.R_RS_INP <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RX <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RX1 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-02      2.350E+05      1.000E+12  
+
+
+               X_U3.R_RX2 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RX3 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RX4 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+12      1.000E+02  
+
+
+               X_U3.R_R_CM1 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R_CM2 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R_DIFF <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+08  
+
+
+
+Model-Specific Temperatures During Sweep  Param value = 0.46
+
+ **** RESISTORS
+
+               X_U3.R_R15 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R16 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R167 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+02  
+
+
+               X_U3.R_R17 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R178 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R179 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      3.000E+04      1.000E+04  
+
+
+               X_U3.R_R18 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R19 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R20 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R21 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R22 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R23 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+06      1.000E+06  
+
+
+               X_U3.R_R24 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R266 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R267 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E+06      1.000E+06  
+
+
+               X_U3.R_R273 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R274 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R275 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+08      6.000E+00      1.000E+00  
+
+
+               X_U3.R_R291 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R297 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R300 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+08      2.100E+01  
+
+
+               X_U3.R_R301 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R306 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R307 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+03      1.000E+00  
+
+
+               X_U3.R_R308 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R309 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R314 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.010E+02      1.750E+05  
+
+
+               X_U3.R_R315 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R316 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R317 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      1.000E+00  
+
+
+               X_U3.R_R318 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R319 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R320 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.780E+00  
+
+
+               X_U3.R_R321 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R322 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R323 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+04  
+
+
+               X_U3.R_R324 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R325 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R326 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        2.310E+01      1.000E+00      1.000E+03  
+
+
+               X_U3.R_R34 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R35 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R36 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.900E+00  
+
+
+               X_U3.R_R37 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R38 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R39 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+04      2.532E+04  
+
+
+               X_U3.R_R43 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R46 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R47 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R48 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R49 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R5 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R50 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R51 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R52 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E-03      1.000E+00  
+
+
+               X_U3.R_R53 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R54 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R55 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R56 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R57 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R58 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R59 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R6 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R60 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+04      1.000E+00  
+
+
+               X_U3.R_R61 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R62 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R63 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U3.R_R64 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R65 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R66 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R67 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R68 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R69 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U3.R_R7 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R70 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R71 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.400E+00      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R72 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R73 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R74 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E-03      1.000E+03  
+
+
+               X_U3.R_R75 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R76 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R77 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+03  
+
+
+               X_U3.R_R78 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R79 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R8 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+03  
+
+
+               X_U3.R_R80 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R81 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R82 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+02      1.000E+00  
+
+
+               X_U3.R_R83 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RDUMMY <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RS_INN <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      2.350E+04      1.000E-02  
+
+
+               X_U3.R_RS_INP <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RX <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RX1 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-02      2.350E+05      1.000E+12  
+
+
+               X_U3.R_RX2 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RX3 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RX4 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+12      1.000E+02  
+
+
+               X_U3.R_R_CM1 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R_CM2 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R_DIFF <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+08  
+
+
+
+Model-Specific Temperatures During Sweep  Param value = 0.47
+
+ **** RESISTORS
+
+               X_U3.R_R15 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R16 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R167 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+02  
+
+
+               X_U3.R_R17 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R178 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R179 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      3.000E+04      1.000E+04  
+
+
+               X_U3.R_R18 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R19 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R20 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R21 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R22 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R23 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+06      1.000E+06  
+
+
+               X_U3.R_R24 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R266 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R267 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E+06      1.000E+06  
+
+
+               X_U3.R_R273 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R274 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R275 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+08      6.000E+00      1.000E+00  
+
+
+               X_U3.R_R291 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R297 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R300 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+08      2.100E+01  
+
+
+               X_U3.R_R301 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R306 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R307 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+03      1.000E+00  
+
+
+               X_U3.R_R308 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R309 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R314 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.010E+02      1.750E+05  
+
+
+               X_U3.R_R315 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R316 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R317 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      1.000E+00  
+
+
+               X_U3.R_R318 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R319 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R320 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.780E+00  
+
+
+               X_U3.R_R321 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R322 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R323 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+04  
+
+
+               X_U3.R_R324 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R325 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R326 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        2.310E+01      1.000E+00      1.000E+03  
+
+
+               X_U3.R_R34 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R35 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R36 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.900E+00  
+
+
+               X_U3.R_R37 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R38 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R39 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+04      2.532E+04  
+
+
+               X_U3.R_R43 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R46 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R47 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R48 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R49 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R5 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R50 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R51 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R52 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E-03      1.000E+00  
+
+
+               X_U3.R_R53 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R54 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R55 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R56 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R57 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R58 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R59 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R6 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R60 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+04      1.000E+00  
+
+
+               X_U3.R_R61 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R62 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R63 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U3.R_R64 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R65 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R66 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R67 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R68 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R69 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U3.R_R7 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R70 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R71 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.400E+00      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R72 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R73 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R74 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E-03      1.000E+03  
+
+
+               X_U3.R_R75 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R76 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R77 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+03  
+
+
+               X_U3.R_R78 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R79 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R8 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+03  
+
+
+               X_U3.R_R80 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R81 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R82 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+02      1.000E+00  
+
+
+               X_U3.R_R83 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RDUMMY <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RS_INN <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      2.350E+04      1.000E-02  
+
+
+               X_U3.R_RS_INP <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RX <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RX1 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-02      2.350E+05      1.000E+12  
+
+
+               X_U3.R_RX2 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RX3 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RX4 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+12      1.000E+02  
+
+
+               X_U3.R_R_CM1 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R_CM2 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R_DIFF <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+08  
+
+
+
+Model-Specific Temperatures During Sweep  Param value = 0.48
+
+ **** RESISTORS
+
+               X_U3.R_R15 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R16 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R167 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+02  
+
+
+               X_U3.R_R17 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R178 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R179 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      3.000E+04      1.000E+04  
+
+
+               X_U3.R_R18 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R19 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R20 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R21 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R22 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R23 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+06      1.000E+06  
+
+
+               X_U3.R_R24 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R266 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R267 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E+06      1.000E+06  
+
+
+               X_U3.R_R273 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R274 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R275 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+08      6.000E+00      1.000E+00  
+
+
+               X_U3.R_R291 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R297 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R300 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+08      2.100E+01  
+
+
+               X_U3.R_R301 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R306 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R307 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+03      1.000E+00  
+
+
+               X_U3.R_R308 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R309 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R314 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.010E+02      1.750E+05  
+
+
+               X_U3.R_R315 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R316 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R317 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      1.000E+00  
+
+
+               X_U3.R_R318 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R319 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R320 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.780E+00  
+
+
+               X_U3.R_R321 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R322 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R323 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+04  
+
+
+               X_U3.R_R324 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R325 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R326 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        2.310E+01      1.000E+00      1.000E+03  
+
+
+               X_U3.R_R34 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R35 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R36 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.900E+00  
+
+
+               X_U3.R_R37 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R38 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R39 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+04      2.532E+04  
+
+
+               X_U3.R_R43 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R46 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R47 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R48 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R49 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R5 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R50 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R51 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R52 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E-03      1.000E+00  
+
+
+               X_U3.R_R53 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R54 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R55 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R56 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R57 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R58 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R59 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R6 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R60 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+04      1.000E+00  
+
+
+               X_U3.R_R61 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R62 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R63 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U3.R_R64 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R65 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R66 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R67 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R68 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R69 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U3.R_R7 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R70 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R71 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.400E+00      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R72 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R73 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R74 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E-03      1.000E+03  
+
+
+               X_U3.R_R75 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R76 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R77 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+03  
+
+
+               X_U3.R_R78 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R79 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R8 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+03  
+
+
+               X_U3.R_R80 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R81 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R82 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+02      1.000E+00  
+
+
+               X_U3.R_R83 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RDUMMY <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RS_INN <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      2.350E+04      1.000E-02  
+
+
+               X_U3.R_RS_INP <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RX <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RX1 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-02      2.350E+05      1.000E+12  
+
+
+               X_U3.R_RX2 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RX3 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RX4 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+12      1.000E+02  
+
+
+               X_U3.R_R_CM1 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R_CM2 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R_DIFF <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+08  
+
+
+
+Model-Specific Temperatures During Sweep  Param value = 0.49
+
+ **** RESISTORS
+
+               X_U3.R_R15 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R16 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R167 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+02  
+
+
+               X_U3.R_R17 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R178 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R179 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      3.000E+04      1.000E+04  
+
+
+               X_U3.R_R18 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R19 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R20 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R21 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R22 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R23 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+06      1.000E+06  
+
+
+               X_U3.R_R24 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R266 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R267 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E+06      1.000E+06  
+
+
+               X_U3.R_R273 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R274 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R275 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+08      6.000E+00      1.000E+00  
+
+
+               X_U3.R_R291 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R297 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R300 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+08      2.100E+01  
+
+
+               X_U3.R_R301 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R306 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R307 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+03      1.000E+00  
+
+
+               X_U3.R_R308 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R309 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R314 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.010E+02      1.750E+05  
+
+
+               X_U3.R_R315 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R316 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R317 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      1.000E+00  
+
+
+               X_U3.R_R318 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R319 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R320 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.780E+00  
+
+
+               X_U3.R_R321 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R322 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R323 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+04  
+
+
+               X_U3.R_R324 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R325 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R326 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        2.310E+01      1.000E+00      1.000E+03  
+
+
+               X_U3.R_R34 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R35 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R36 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.900E+00  
+
+
+               X_U3.R_R37 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R38 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R39 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+04      2.532E+04  
+
+
+               X_U3.R_R43 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R46 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R47 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R48 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R49 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R5 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R50 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R51 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R52 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E-03      1.000E+00  
+
+
+               X_U3.R_R53 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R54 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R55 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R56 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R57 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R58 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R59 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R6 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R60 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+04      1.000E+00  
+
+
+               X_U3.R_R61 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R62 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R63 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U3.R_R64 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R65 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R66 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R67 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R68 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R69 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U3.R_R7 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R70 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R71 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.400E+00      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R72 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R73 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R74 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E-03      1.000E+03  
+
+
+               X_U3.R_R75 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R76 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R77 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+03  
+
+
+               X_U3.R_R78 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R79 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R8 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+03  
+
+
+               X_U3.R_R80 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R81 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R82 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+02      1.000E+00  
+
+
+               X_U3.R_R83 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RDUMMY <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RS_INN <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      2.350E+04      1.000E-02  
+
+
+               X_U3.R_RS_INP <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RX <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RX1 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-02      2.350E+05      1.000E+12  
+
+
+               X_U3.R_RX2 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RX3 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RX4 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+12      1.000E+02  
+
+
+               X_U3.R_R_CM1 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R_CM2 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R_DIFF <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+08  
+
+
+
+Model-Specific Temperatures During Sweep  Param value = 0.5
+
+ **** RESISTORS
+
+               X_U3.R_R15 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R16 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R167 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+02  
+
+
+               X_U3.R_R17 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R178 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R179 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      3.000E+04      1.000E+04  
+
+
+               X_U3.R_R18 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R19 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R20 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R21 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R22 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R23 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+06      1.000E+06  
+
+
+               X_U3.R_R24 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R266 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R267 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E+06      1.000E+06  
+
+
+               X_U3.R_R273 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R274 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R275 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+08      6.000E+00      1.000E+00  
+
+
+               X_U3.R_R291 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R297 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R300 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+08      2.100E+01  
+
+
+               X_U3.R_R301 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R306 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R307 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+03      1.000E+00  
+
+
+               X_U3.R_R308 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R309 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R314 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.010E+02      1.750E+05  
+
+
+               X_U3.R_R315 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R316 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R317 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      1.000E+00  
+
+
+               X_U3.R_R318 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R319 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R320 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.780E+00  
+
+
+               X_U3.R_R321 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R322 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R323 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+04  
+
+
+               X_U3.R_R324 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R325 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R326 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        2.310E+01      1.000E+00      1.000E+03  
+
+
+               X_U3.R_R34 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R35 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R36 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.900E+00  
+
+
+               X_U3.R_R37 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R38 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R39 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+04      2.532E+04  
+
+
+               X_U3.R_R43 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R46 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R47 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R48 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R49 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R5 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R50 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R51 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R52 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E-03      1.000E+00  
+
+
+               X_U3.R_R53 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R54 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R55 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R56 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R57 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R58 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R59 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R6 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R60 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+04      1.000E+00  
+
+
+               X_U3.R_R61 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R62 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R63 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U3.R_R64 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R65 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R66 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R67 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R68 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R69 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U3.R_R7 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R70 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R71 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.400E+00      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R72 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R73 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R74 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E-03      1.000E+03  
+
+
+               X_U3.R_R75 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R76 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R77 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+03  
+
+
+               X_U3.R_R78 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R79 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R8 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+03  
+
+
+               X_U3.R_R80 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R81 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R82 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+02      1.000E+00  
+
+
+               X_U3.R_R83 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RDUMMY <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RS_INN <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      2.350E+04      1.000E-02  
+
+
+               X_U3.R_RS_INP <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RX <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RX1 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-02      2.350E+05      1.000E+12  
+
+
+               X_U3.R_RX2 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RX3 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RX4 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+12      1.000E+02  
+
+
+               X_U3.R_R_CM1 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R_CM2 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R_DIFF <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+08  
+
+
+
+Model-Specific Temperatures During Sweep  Param value = 0.51
+
+ **** RESISTORS
+
+               X_U3.R_R15 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R16 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R167 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+02  
+
+
+               X_U3.R_R17 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R178 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R179 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      3.000E+04      1.000E+04  
+
+
+               X_U3.R_R18 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R19 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R20 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R21 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R22 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R23 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+06      1.000E+06  
+
+
+               X_U3.R_R24 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R266 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R267 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E+06      1.000E+06  
+
+
+               X_U3.R_R273 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R274 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R275 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+08      6.000E+00      1.000E+00  
+
+
+               X_U3.R_R291 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R297 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R300 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+08      2.100E+01  
+
+
+               X_U3.R_R301 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R306 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R307 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+03      1.000E+00  
+
+
+               X_U3.R_R308 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R309 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R314 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.010E+02      1.750E+05  
+
+
+               X_U3.R_R315 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R316 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R317 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      1.000E+00  
+
+
+               X_U3.R_R318 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R319 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R320 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.780E+00  
+
+
+               X_U3.R_R321 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R322 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R323 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+04  
+
+
+               X_U3.R_R324 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R325 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R326 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        2.310E+01      1.000E+00      1.000E+03  
+
+
+               X_U3.R_R34 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R35 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R36 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.900E+00  
+
+
+               X_U3.R_R37 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R38 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R39 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+04      2.532E+04  
+
+
+               X_U3.R_R43 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R46 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R47 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R48 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R49 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R5 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R50 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R51 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R52 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E-03      1.000E+00  
+
+
+               X_U3.R_R53 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R54 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R55 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R56 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R57 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R58 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R59 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R6 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R60 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+04      1.000E+00  
+
+
+               X_U3.R_R61 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R62 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R63 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U3.R_R64 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R65 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R66 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R67 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R68 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R69 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U3.R_R7 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R70 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R71 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.400E+00      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R72 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R73 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R74 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E-03      1.000E+03  
+
+
+               X_U3.R_R75 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R76 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R77 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+03  
+
+
+               X_U3.R_R78 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R79 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R8 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+03  
+
+
+               X_U3.R_R80 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R81 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R82 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+02      1.000E+00  
+
+
+               X_U3.R_R83 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RDUMMY <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RS_INN <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      2.350E+04      1.000E-02  
+
+
+               X_U3.R_RS_INP <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RX <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RX1 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-02      2.350E+05      1.000E+12  
+
+
+               X_U3.R_RX2 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RX3 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RX4 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+12      1.000E+02  
+
+
+               X_U3.R_R_CM1 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R_CM2 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R_DIFF <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+08  
+
+
+
+Model-Specific Temperatures During Sweep  Param value = 0.52
+
+ **** RESISTORS
+
+               X_U3.R_R15 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R16 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R167 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+02  
+
+
+               X_U3.R_R17 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R178 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R179 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      3.000E+04      1.000E+04  
+
+
+               X_U3.R_R18 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R19 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R20 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R21 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R22 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R23 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+06      1.000E+06  
+
+
+               X_U3.R_R24 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R266 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R267 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E+06      1.000E+06  
+
+
+               X_U3.R_R273 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R274 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R275 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+08      6.000E+00      1.000E+00  
+
+
+               X_U3.R_R291 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R297 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R300 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+08      2.100E+01  
+
+
+               X_U3.R_R301 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R306 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R307 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+03      1.000E+00  
+
+
+               X_U3.R_R308 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R309 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R314 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.010E+02      1.750E+05  
+
+
+               X_U3.R_R315 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R316 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R317 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      1.000E+00  
+
+
+               X_U3.R_R318 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R319 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R320 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.780E+00  
+
+
+               X_U3.R_R321 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R322 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R323 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+04  
+
+
+               X_U3.R_R324 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R325 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R326 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        2.310E+01      1.000E+00      1.000E+03  
+
+
+               X_U3.R_R34 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R35 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R36 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.900E+00  
+
+
+               X_U3.R_R37 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R38 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R39 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+04      2.532E+04  
+
+
+               X_U3.R_R43 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R46 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R47 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R48 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R49 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R5 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R50 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R51 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R52 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E-03      1.000E+00  
+
+
+               X_U3.R_R53 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R54 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R55 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R56 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R57 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R58 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R59 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R6 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R60 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+04      1.000E+00  
+
+
+               X_U3.R_R61 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R62 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R63 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U3.R_R64 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R65 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R66 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R67 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R68 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R69 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U3.R_R7 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R70 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R71 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.400E+00      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R72 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R73 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R74 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E-03      1.000E+03  
+
+
+               X_U3.R_R75 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R76 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R77 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+03  
+
+
+               X_U3.R_R78 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R79 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R8 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+03  
+
+
+               X_U3.R_R80 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R81 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R82 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+02      1.000E+00  
+
+
+               X_U3.R_R83 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RDUMMY <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RS_INN <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      2.350E+04      1.000E-02  
+
+
+               X_U3.R_RS_INP <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RX <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RX1 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-02      2.350E+05      1.000E+12  
+
+
+               X_U3.R_RX2 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RX3 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RX4 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+12      1.000E+02  
+
+
+               X_U3.R_R_CM1 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R_CM2 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R_DIFF <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+08  
+
+
+
+Model-Specific Temperatures During Sweep  Param value = 0.53
+
+ **** RESISTORS
+
+               X_U3.R_R15 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R16 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R167 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+02  
+
+
+               X_U3.R_R17 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R178 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R179 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      3.000E+04      1.000E+04  
+
+
+               X_U3.R_R18 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R19 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R20 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R21 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R22 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R23 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+06      1.000E+06  
+
+
+               X_U3.R_R24 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R266 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R267 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E+06      1.000E+06  
+
+
+               X_U3.R_R273 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R274 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R275 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+08      6.000E+00      1.000E+00  
+
+
+               X_U3.R_R291 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R297 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R300 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+08      2.100E+01  
+
+
+               X_U3.R_R301 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R306 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R307 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+03      1.000E+00  
+
+
+               X_U3.R_R308 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R309 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R314 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.010E+02      1.750E+05  
+
+
+               X_U3.R_R315 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R316 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R317 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      1.000E+00  
+
+
+               X_U3.R_R318 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R319 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R320 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.780E+00  
+
+
+               X_U3.R_R321 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R322 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R323 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+04  
+
+
+               X_U3.R_R324 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R325 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R326 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        2.310E+01      1.000E+00      1.000E+03  
+
+
+               X_U3.R_R34 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R35 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R36 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.900E+00  
+
+
+               X_U3.R_R37 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R38 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R39 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+04      2.532E+04  
+
+
+               X_U3.R_R43 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R46 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R47 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R48 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R49 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R5 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R50 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R51 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R52 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E-03      1.000E+00  
+
+
+               X_U3.R_R53 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R54 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R55 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R56 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R57 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R58 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R59 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R6 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R60 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+04      1.000E+00  
+
+
+               X_U3.R_R61 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R62 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R63 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U3.R_R64 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R65 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R66 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R67 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R68 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R69 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U3.R_R7 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R70 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R71 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.400E+00      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R72 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R73 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R74 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E-03      1.000E+03  
+
+
+               X_U3.R_R75 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R76 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R77 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+03  
+
+
+               X_U3.R_R78 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R79 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R8 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+03  
+
+
+               X_U3.R_R80 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R81 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R82 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+02      1.000E+00  
+
+
+               X_U3.R_R83 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RDUMMY <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RS_INN <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      2.350E+04      1.000E-02  
+
+
+               X_U3.R_RS_INP <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RX <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RX1 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-02      2.350E+05      1.000E+12  
+
+
+               X_U3.R_RX2 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RX3 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RX4 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+12      1.000E+02  
+
+
+               X_U3.R_R_CM1 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R_CM2 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R_DIFF <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+08  
+
+
+
+Model-Specific Temperatures During Sweep  Param value = 0.54
+
+ **** RESISTORS
+
+               X_U3.R_R15 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R16 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R167 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+02  
+
+
+               X_U3.R_R17 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R178 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R179 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      3.000E+04      1.000E+04  
+
+
+               X_U3.R_R18 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R19 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R20 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R21 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R22 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R23 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+06      1.000E+06  
+
+
+               X_U3.R_R24 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R266 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R267 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E+06      1.000E+06  
+
+
+               X_U3.R_R273 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R274 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R275 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+08      6.000E+00      1.000E+00  
+
+
+               X_U3.R_R291 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R297 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R300 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+08      2.100E+01  
+
+
+               X_U3.R_R301 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R306 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R307 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+03      1.000E+00  
+
+
+               X_U3.R_R308 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R309 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R314 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.010E+02      1.750E+05  
+
+
+               X_U3.R_R315 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R316 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R317 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      1.000E+00  
+
+
+               X_U3.R_R318 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R319 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R320 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.780E+00  
+
+
+               X_U3.R_R321 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R322 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R323 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+04  
+
+
+               X_U3.R_R324 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R325 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R326 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        2.310E+01      1.000E+00      1.000E+03  
+
+
+               X_U3.R_R34 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R35 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R36 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.900E+00  
+
+
+               X_U3.R_R37 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R38 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R39 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+04      2.532E+04  
+
+
+               X_U3.R_R43 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R46 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R47 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R48 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R49 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R5 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R50 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R51 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R52 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E-03      1.000E+00  
+
+
+               X_U3.R_R53 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R54 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R55 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R56 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R57 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R58 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R59 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R6 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R60 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+04      1.000E+00  
+
+
+               X_U3.R_R61 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R62 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R63 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U3.R_R64 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R65 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R66 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R67 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R68 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R69 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U3.R_R7 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R70 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R71 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.400E+00      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R72 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R73 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R74 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E-03      1.000E+03  
+
+
+               X_U3.R_R75 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R76 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R77 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+03  
+
+
+               X_U3.R_R78 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R79 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R8 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+03  
+
+
+               X_U3.R_R80 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R81 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R82 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+02      1.000E+00  
+
+
+               X_U3.R_R83 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RDUMMY <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RS_INN <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      2.350E+04      1.000E-02  
+
+
+               X_U3.R_RS_INP <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RX <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RX1 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-02      2.350E+05      1.000E+12  
+
+
+               X_U3.R_RX2 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RX3 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RX4 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+12      1.000E+02  
+
+
+               X_U3.R_R_CM1 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R_CM2 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R_DIFF <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+08  
+
+
+
+Model-Specific Temperatures During Sweep  Param value = 0.55
+
+ **** RESISTORS
+
+               X_U3.R_R15 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R16 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R167 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+02  
+
+
+               X_U3.R_R17 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R178 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R179 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      3.000E+04      1.000E+04  
+
+
+               X_U3.R_R18 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R19 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R20 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R21 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R22 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R23 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+06      1.000E+06  
+
+
+               X_U3.R_R24 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R266 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R267 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E+06      1.000E+06  
+
+
+               X_U3.R_R273 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R274 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R275 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+08      6.000E+00      1.000E+00  
+
+
+               X_U3.R_R291 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R297 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R300 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+08      2.100E+01  
+
+
+               X_U3.R_R301 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R306 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R307 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+03      1.000E+00  
+
+
+               X_U3.R_R308 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R309 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R314 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.010E+02      1.750E+05  
+
+
+               X_U3.R_R315 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R316 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R317 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      1.000E+00  
+
+
+               X_U3.R_R318 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R319 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R320 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.780E+00  
+
+
+               X_U3.R_R321 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R322 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R323 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+04  
+
+
+               X_U3.R_R324 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R325 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R326 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        2.310E+01      1.000E+00      1.000E+03  
+
+
+               X_U3.R_R34 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R35 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R36 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.900E+00  
+
+
+               X_U3.R_R37 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R38 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R39 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+04      2.532E+04  
+
+
+               X_U3.R_R43 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R46 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R47 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R48 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R49 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R5 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R50 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R51 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R52 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E-03      1.000E+00  
+
+
+               X_U3.R_R53 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R54 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R55 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R56 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R57 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R58 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R59 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R6 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R60 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+04      1.000E+00  
+
+
+               X_U3.R_R61 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R62 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R63 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U3.R_R64 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R65 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R66 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R67 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R68 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R69 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U3.R_R7 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R70 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R71 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.400E+00      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R72 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R73 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R74 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E-03      1.000E+03  
+
+
+               X_U3.R_R75 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R76 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R77 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+03  
+
+
+               X_U3.R_R78 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R79 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R8 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+03  
+
+
+               X_U3.R_R80 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R81 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R82 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+02      1.000E+00  
+
+
+               X_U3.R_R83 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RDUMMY <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RS_INN <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      2.350E+04      1.000E-02  
+
+
+               X_U3.R_RS_INP <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RX <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RX1 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-02      2.350E+05      1.000E+12  
+
+
+               X_U3.R_RX2 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RX3 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RX4 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+12      1.000E+02  
+
+
+               X_U3.R_R_CM1 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R_CM2 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R_DIFF <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+08  
+
+
+
+Model-Specific Temperatures After Sweep  Param value = 0
+
+ **** RESISTORS
+
+               X_U3.R_R15 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R16 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R167 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+02  
+
+
+               X_U3.R_R17 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R178 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R179 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      3.000E+04      1.000E+04  
+
+
+               X_U3.R_R18 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R19 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R20 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R21 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R22 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R23 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+06      1.000E+06  
+
+
+               X_U3.R_R24 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R266 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R267 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E+06      1.000E+06  
+
+
+               X_U3.R_R273 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R274 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R275 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+08      6.000E+00      1.000E+00  
+
+
+               X_U3.R_R291 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R297 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R300 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+08      2.100E+01  
+
+
+               X_U3.R_R301 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R306 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R307 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+03      1.000E+00  
+
+
+               X_U3.R_R308 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R309 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R314 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.010E+02      1.750E+05  
+
+
+               X_U3.R_R315 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R316 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R317 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      1.000E+00  
+
+
+               X_U3.R_R318 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R319 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R320 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.780E+00  
+
+
+               X_U3.R_R321 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R322 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R323 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+04  
+
+
+               X_U3.R_R324 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R325 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R326 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        2.310E+01      1.000E+00      1.000E+03  
+
+
+               X_U3.R_R34 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R35 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R36 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+04      1.000E+00      8.900E+00  
+
+
+               X_U3.R_R37 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R38 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R39 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+04      2.532E+04  
+
+
+               X_U3.R_R43 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R46 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R47 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R48 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R49 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R5 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R50 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R51 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R52 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+06      1.000E-03      1.000E+00  
+
+
+               X_U3.R_R53 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R54 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R55 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R56 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R57 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R58 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R59 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R6 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R60 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+04      1.000E+00  
+
+
+               X_U3.R_R61 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R62 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R63 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U3.R_R64 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R65 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R66 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+12      1.000E+00  
+
+
+               X_U3.R_R67 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R68 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R69 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E-03      1.000E+12  
+
+
+               X_U3.R_R7 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R70 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R71 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.400E+00      1.000E+00      1.000E-03  
+
+
+               X_U3.R_R72 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R73 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R74 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+03      1.000E-03      1.000E+03  
+
+
+               X_U3.R_R75 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R76 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R77 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-03      1.000E+03      1.000E+03  
+
+
+               X_U3.R_R78 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R79 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R8 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+00      1.000E+00      1.000E+03  
+
+
+               X_U3.R_R80 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R81 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R82 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+02      1.000E+00  
+
+
+               X_U3.R_R83 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RDUMMY <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RS_INN <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      2.350E+04      1.000E-02  
+
+
+               X_U3.R_RS_INP <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RX <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RX1 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E-02      2.350E+05      1.000E+12  
+
+
+               X_U3.R_RX2 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_RX3 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_RX4 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+02      1.000E+12      1.000E+02  
+
+
+               X_U3.R_R_CM1 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                              X_U3.R_R_CM2 <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+                                             X_U3.R_R_DIFF <X_U3.R_NOISELESS> (T_Current -273.15 T_Measured 27)
+
+          R        1.000E+12      1.000E+12      1.000E+08  
+
+
+
+
+          JOB CONCLUDED
+
+**** 03/19/25 12:47:26 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ c:\sebas\02-facultad\pspice\02 - voltímetro\004_etapa_uno_compensacion_offset\004_etapa_uno_compens
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =        3.20
+

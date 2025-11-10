@@ -1,0 +1,15 @@
+* source 002_DOS_ETAPAS_REAL
+V_V2         N17025 0  AC 0.1
++SIN 2.5 0.1 50 0 0 0
+R_R5         N17025 N17035  1k TC=0,0 
+R_R3         0 N16919  1k TC=0,0 
+R_R2         N16991 N16955  24k TC=0,0 
+R_R6         N17125 N17035  1k TC=0,0 
+R_R4         N16919 N16933  1k TC=0,0 
+R_R1         0 N16991  1k TC=0,0 
+V_V1         0 N17125 2.4
+R_R7         0 N17035  100k TC=0,0 
+X_U3         N17035 N16919 VCC VEE N16933 OPAx210
+X_U4         N16933 N16991 VCC VEE N16955 OPAx210
+V_V3         VCC 0 10Vdc
+V_V4         0 VEE 10Vdc

@@ -1,0 +1,12 @@
+* source 003_ETAPA_UNO_MEDICION_OFFSET
+V_V1         0 N18979 0
+V_V3         VCC 0 10Vdc
+R_R4         N18599 N18613  1k TC=0,0 
+V_V2         N18823 0  AC 0
++SIN 0 0 50 0 0 0
+X_U3         N18833 N18599 VCC VEE N18613 OPAx210
+R_R7         0 N18833  100k TC=0,0 
+V_V4         0 VEE 10Vdc
+R_R6         N18979 N18833  1k TC=0,0 
+R_R5         N18823 N18833  1k TC=0,0 
+R_R3         0 N18599  1k TC=0,0 

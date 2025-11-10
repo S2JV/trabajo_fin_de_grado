@@ -1,0 +1,19 @@
+* source 005_ETAPA_UNO_COMPENSADO_SIM
+V_V5         5VCC 0 5Vdc
+V_V6         0 5VEE 5Vdc
+R_R4         N21468 N21482  1k TC=0,0 
+X_U3         N21612 N21468 VCC VEE N21482 OPAx210
+R_R6         N21662 N21612  1k TC=0,0 
+X_R11         5VEE N21826 5VCC POT PARAMS: SET={POT_SET} VALUE=50k
+V_V3         VCC 0 10Vdc
+R_R10         0 N21830  100 TC=0,0 
+R_R7         0 N21612  100k TC=0,0 
+R_R3         0 N21468  1k TC=0,0 
+V_V2         N21602 0  AC 0.1
++SIN 2.5 0.1 50 0 0 0
+R_R9         N21826 N21830  200k TC=0,0 
+R_R5         N21602 N21612  1k TC=0,0 
+R_R8         N21830 N21612  900 TC=0,0 
+V_V4         0 VEE 10Vdc
+V_V1         0 N21662 0
+.PARAM  pot_set=502.865m
