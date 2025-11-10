@@ -1,0 +1,61 @@
+{
+	"Name": "Filtro Auxiliar 2º Orden",
+	"Description": ".",
+	"Tool": "FW",
+	"Version": "1.2",
+	"Design": {
+		"visitedTabs": [
+			"filter-type",
+			"specifications",
+			"components",
+			"tolerances"
+		],
+		"filterType": "lowPass",
+		"specifications": {
+			"gain": 0,
+			"gainUnit": "dB",
+			"passbandAttenuation": -3,
+			"passbandFrequency": 1000,
+			"stopbandAttenuation": -40,
+			"stopbandFrequency": 10100,
+			"filterResponseValue": 0,
+			"filterResponseSlider": 50
+		},
+		"components": {
+			"vsPlus": 5,
+			"vsMinus": 0,
+			"optimization": "Power",
+			"optimizationPreference": "nonSpecific",
+			"compensateForGbw": false,
+			"preferredAlgorithms": {
+				"sallenKey|lowPass": "lowpassV2"
+			},
+			"stages": [
+				{
+					"stageLetter": "A",
+					"componentSizing": 77,
+					"gain": -1,
+					"gainEnabled": false,
+					"implementation": "sallenKey",
+					"opAmps": "ADA4505-2"
+				}
+			],
+			"recommendedAmps": [],
+			"sortOrder": [
+				0
+			]
+		},
+		"tolerances": {
+			"resistorTolerance": "1%",
+			"capacitorTolerance": "5%",
+			"inductorTolerance": "5%",
+			"opAmpGbwTolerance": "20%",
+			"resistorPreferredSeries": "E96",
+			"capacitorPreferredSeries": "E24",
+			"inductorPreferredSeries": "E12"
+		},
+		"nextSteps": {}
+	},
+	"CreatedDate": "2025-04-21 07:49:38 PM",
+	"UpdatedDate": "2025-04-21 07:49:38 PM"
+}

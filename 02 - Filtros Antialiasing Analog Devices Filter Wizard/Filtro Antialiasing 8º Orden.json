@@ -1,0 +1,88 @@
+{
+	"Name": "Filtro Antialiasing 8º Orden",
+	"Description": ".",
+	"Tool": "FW",
+	"Version": "1.2",
+	"Design": {
+		"visitedTabs": [
+			"filter-type",
+			"specifications",
+			"components",
+			"tolerances"
+		],
+		"filterType": "lowPass",
+		"specifications": {
+			"gain": 0,
+			"gainUnit": "dB",
+			"passbandAttenuation": -3,
+			"passbandFrequency": 100000,
+			"stopbandAttenuation": -65,
+			"stopbandFrequency": 500000,
+			"filterResponseValue": 0,
+			"filterResponseSlider": 100
+		},
+		"components": {
+			"vsPlus": 5,
+			"vsMinus": 0,
+			"optimization": "Noise",
+			"optimizationPreference": "nonSpecific",
+			"compensateForGbw": false,
+			"preferredAlgorithms": {
+				"sallenKey|lowPass": "lowpassV2"
+			},
+			"stages": [
+				{
+					"stageLetter": "A",
+					"componentSizing": 47,
+					"gain": -1,
+					"gainEnabled": false,
+					"implementation": "sallenKey",
+					"opAmps": "AD8656"
+				},
+				{
+					"stageLetter": "B",
+					"componentSizing": 47,
+					"gain": -1,
+					"gainEnabled": false,
+					"implementation": "sallenKey",
+					"opAmps": "AD8656"
+				},
+				{
+					"stageLetter": "C",
+					"componentSizing": 46,
+					"gain": -1,
+					"gainEnabled": false,
+					"implementation": "sallenKey",
+					"opAmps": "AD8656"
+				},
+				{
+					"stageLetter": "D",
+					"componentSizing": 48,
+					"gain": -1,
+					"gainEnabled": false,
+					"implementation": "sallenKey",
+					"opAmps": "AD8656"
+				}
+			],
+			"recommendedAmps": [],
+			"sortOrder": [
+				3,
+				2,
+				1,
+				0
+			]
+		},
+		"tolerances": {
+			"resistorTolerance": "1%",
+			"capacitorTolerance": "10%",
+			"inductorTolerance": "5%",
+			"opAmpGbwTolerance": "20%",
+			"resistorPreferredSeries": "E96",
+			"capacitorPreferredSeries": "E24",
+			"inductorPreferredSeries": "E12"
+		},
+		"nextSteps": {}
+	},
+	"CreatedDate": "2025-03-27 10:10:23 AM",
+	"UpdatedDate": "2025-03-27 10:10:23 AM"
+}

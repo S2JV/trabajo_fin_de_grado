@@ -1,0 +1,70 @@
+{
+	"Name": "Filtro Antialiasing 4º Orden",
+	"Description": ".",
+	"Tool": "FW",
+	"Version": "1.2",
+	"Design": {
+		"visitedTabs": [
+			"filter-type",
+			"specifications",
+			"components",
+			"tolerances"
+		],
+		"filterType": "lowPass",
+		"specifications": {
+			"gain": 0,
+			"gainUnit": "dB",
+			"passbandAttenuation": -3,
+			"passbandFrequency": 100000,
+			"stopbandAttenuation": -40,
+			"stopbandFrequency": 500000,
+			"filterResponseValue": 0,
+			"filterResponseSlider": 100
+		},
+		"components": {
+			"vsPlus": 5,
+			"vsMinus": -5,
+			"optimization": "Noise",
+			"optimizationPreference": "nonSpecific",
+			"compensateForGbw": false,
+			"preferredAlgorithms": {
+				"sallenKey|lowPass": "lowpassV2"
+			},
+			"stages": [
+				{
+					"stageLetter": "A",
+					"componentSizing": 49,
+					"gain": -1,
+					"gainEnabled": false,
+					"implementation": "sallenKey",
+					"opAmps": "LT6231"
+				},
+				{
+					"stageLetter": "B",
+					"componentSizing": 48,
+					"gain": -1,
+					"gainEnabled": false,
+					"implementation": "sallenKey",
+					"opAmps": "LT6231"
+				}
+			],
+			"recommendedAmps": [],
+			"sortOrder": [
+				1,
+				0
+			]
+		},
+		"tolerances": {
+			"resistorTolerance": "1%",
+			"capacitorTolerance": "10%",
+			"inductorTolerance": "5%",
+			"opAmpGbwTolerance": "20%",
+			"resistorPreferredSeries": "E96",
+			"capacitorPreferredSeries": "E24",
+			"inductorPreferredSeries": "E12"
+		},
+		"nextSteps": {}
+	},
+	"CreatedDate": "2025-03-27 10:21:09 AM",
+	"UpdatedDate": "2025-03-27 10:21:09 AM"
+}
